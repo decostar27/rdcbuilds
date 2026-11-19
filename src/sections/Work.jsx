@@ -2,9 +2,9 @@ import { useRef, useState, useCallback } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import { Reveal, Words, Label, Lightbox } from '../components/ui.jsx'
 import { Mandala } from '../components/Ambient.jsx'
-import { TiltedCard, Card3D, Layer } from '../components/effects.jsx'
+import { TiltedCard } from '../components/effects.jsx'
 import { SilaIcon, SamadhiIcon, PannaIcon } from '../components/StageIcons.jsx'
-import { looks, runway, projects, nibbanaPages } from '../data.js'
+import { looks, runway, projects, nibbanaPages, nibbanaHighlights } from '../data.js'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -149,28 +149,26 @@ function Projects() {
       </div>
       <div className="project-grid">
         {projects.map((pr, i) => (
-          <Reveal key={pr.id} delay={i * 0.1}>
-            <Card3D className="project-3d" max={7} sway={false}>
-              <motion.button className="project-card glass" onClick={() => { setOpen(pr.id); setLb(0) }} whileHover="hover">
-                <Layer z={40} className="pc-layer">
-                  <div className="pc-img">
-                    <motion.img src={pr.pages[pr.pages.length - 1].src} alt="" loading="lazy"
-                      variants={{ hover: { scale: 1.06 } }} transition={{ duration: 1.2, ease }} />
-                  </div>
-                </Layer>
+          <Reveal key={pr.id} delay={i * 0.1} className={pr.featured ? 'pc-featured' : ''}>
+            <TiltedCard className="project-tilt" max={6} scale={1.015}>
+              <motion.button className="project-card" onClick={() => { setOpen(pr.id); setLb(0) }} whileHover="hover">
+                <div className="pc-img">
+                  <motion.img src={pr.pages[pr.cover].src} alt="" loading="lazy"
+                    variants={{ hover: { scale: 1.05 } }} transition={{ duration: 1.2, ease }} />
+                  <span className="pc-pages">{pr.pages.length} pages</span>
+                </div>
                 <div className="pc-body">
-                  <Layer z={60} className="pc-layer"><span className="fc-k">{pr.kind}</span><h4>{pr.title}</h4></Layer>
-                  <Layer z={25} className="pc-layer"><p>{pr.blurb}</p></Layer>
-                  <Layer z={70} className="pc-layer">
-                    <motion.span className="pc-more" variants={{ hover: { x: 6 } }}>View pages →</motion.span>
-                  </Layer>
+                  <span className="fc-k">{pr.kind}</span>
+                  <h4>{pr.title}</h4>
+                  <p>{pr.blurb}</p>
+                  <motion.span className="pc-more" variants={{ hover: { x: 6 } }}>View all pages →</motion.span>
                 </div>
               </motion.button>
-            </Card3D>
+            </TiltedCard>
           </Reveal>
         ))}
       </div>
-      <Lightbox items={p ? p.pages : []} index={p ? lb : null} onClose={() => { close(); setOpen(null) }} onIndex={setLb} title={p ? `${p.title} · Portfolio pages` : ''} />
+      <Lightbox items={p ? p.pages : []} index={p ? lb : null} onClose={() => { close(); setOpen(null) }} onIndex={setLb} title={p ? p.title : ''} book={p?.id === 'lookbook'} />
     </div>
   )
 }
@@ -218,19 +216,22 @@ export default function Work() {
 
       <div className="process">
         <Reveal className="process-head">
-          <span className="fc-k">From the portfolio</span>
-          <h3 className="h3">Concept · print · fabric · line-up</h3>
+          <div>
+            <span className="fc-k">From the portfolio</span>
+            <h3 className="h3">Concept · print · fabric · line-up</h3>
+          </div>
+          <button className="btn btn-ghost" onClick={() => setLb(0)}>Read the full portfolio · {nibbanaPages.length} pages</button>
         </Reveal>
         <div className="process-strip">
-          {nibbanaPages.map((pg, i) => (
-            <Reveal key={pg.src} delay={i * 0.08} className="process-item">
-              <button onClick={() => setLb(i)} aria-label={`Open portfolio page ${i + 1}`}>
-                <img src={pg.src} alt="Thama Nibbana portfolio page" loading="lazy" />
+          {nibbanaHighlights.map((n, i) => (
+            <Reveal key={n} delay={i * 0.08} className="process-item">
+              <button onClick={() => setLb(n)} aria-label={`Open portfolio page ${n + 1}`}>
+                <img src={nibbanaPages[n].src} alt={nibbanaPages[n].alt} loading="lazy" />
               </button>
             </Reveal>
           ))}
         </div>
-        <Lightbox items={nibbanaPages} index={lb} onClose={close} onIndex={setLb} title="Thama Nibbana · Portfolio pages" />
+        <Lightbox items={nibbanaPages} index={lb} onClose={close} onIndex={setLb} title="Graduate portfolio · Lakshi Milani" />
       </div>
 
       <Runway />

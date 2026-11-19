@@ -53,18 +53,42 @@ export function Label({ children, num }) {
   - Close: ✕ button, Esc, or clicking the dark backdrop. Focus moves to ✕ on open and returns afterwards.
   - Navigate: arrow buttons, ← → keys, swipe on touch, or the thumbnail strip.
   - Zoom: the + button, Z key, or double-click; zoomed images scroll/pan inside the viewer.
+  - Dual view (book prop): two pages side by side like an open book — page 1 alone as the cover,
+    then 2–3, 4–5 … Toggle with the book button or D. Only offered on screens 700px and wider.
 */
-export function Lightbox({ items, index, onClose, onIndex, title = '' }) {
+const wideQuery = '(min-width: 700px)'
+export function Lightbox({ items, index, onClose, onIndex, title = '', book = false }) {
   const open = index != null && items.length > 0
+  const n = items.length
   const [zoom, setZoom] = useState(false)
+  const [wide, setWide] = useState(() => typeof window !== 'undefined' && window.matchMedia(wideQuery).matches)
+  const [dualPref, setDualPref] = useState(book)
   const closeRef = useRef(null)
   const dialogRef = useRef(null)
   const thumbsRef = useRef(null)
   const lastFocus = useRef(null)
-  const n = items.length
-  const go = useCallback((d) => onIndex((index + d + n) % n), [index, n, onIndex])
 
-  useEffect(() => { setZoom(false) }, [index])
+  useEffect(() => {
+    const mq = window.matchMedia(wideQuery)
+    const on = () => setWide(mq.matches)
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+  useEffect(() => { setDualPref(book) }, [book])
+
+  const dual = dualPref && wide && n > 2
+  // pages shown right now
+  const start = !dual || index == null ? index : index === 0 ? 0 : index % 2 === 1 ? index : index - 1
+  const shown = !open ? [] : dual && start > 0 && start + 1 < n ? [start, start + 1] : [start]
+  const lastStart = n - 1 === 0 ? 0 : (n - 1) % 2 === 1 ? n - 1 : n - 2
+
+  const go = useCallback((d) => {
+    if (!dual) return onIndex((index + d + n) % n)
+    if (d > 0) { const nx = start === 0 ? 1 : start + 2; onIndex(nx >= n ? 0 : nx) }
+    else { const pv = start <= 1 ? (start === 0 ? lastStart : 0) : start - 2; onIndex(pv) }
+  }, [dual, index, n, onIndex, start, lastStart])
+
+  useEffect(() => { setZoom(false) }, [index, dual])
 
   // open/close side effects: lock page scroll, manage focus
   useEffect(() => {
@@ -87,6 +111,9 @@ export function Lightbox({ items, index, onClose, onIndex, title = '' }) {
       else if (e.key === 'ArrowRight' && n > 1) go(1)
       else if (e.key === 'ArrowLeft' && n > 1) go(-1)
       else if (e.key === 'z' || e.key === 'Z') setZoom((z) => !z)
+      else if ((e.key === 'd' || e.key === 'D') && wide && n > 2) setDualPref((v) => !v)
+      else if (e.key === 'Home') onIndex(0)
+      else if (e.key === 'End') onIndex(n - 1)
       else if (e.key === 'Tab') {
         // keep focus inside the viewer
         const f = dialogRef.current?.querySelectorAll('button')
@@ -98,17 +125,18 @@ export function Lightbox({ items, index, onClose, onIndex, title = '' }) {
     }
     window.addEventListener('keydown', key)
     return () => window.removeEventListener('keydown', key)
-  }, [open, n, go, onClose])
+  }, [open, n, go, onClose, onIndex, wide])
 
   // keep the active thumbnail visible, preload neighbours
   useEffect(() => {
     if (!open) return
     thumbsRef.current?.querySelector('.on')?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' })
-    ;[1, -1].forEach((d) => { const im = new Image(); im.src = items[(index + d + n) % n].src })
+    ;[-1, 1, 2, 3].forEach((d) => { const im = new Image(); im.src = items[(index + d + n) % n].src })
   }, [open, index, n, items])
 
   if (typeof document === 'undefined') return null
-  const item = open ? items[index] : null
+  const pad = (v) => String(v + 1).padStart(2, '0')
+  const countText = shown.length === 2 ? `${pad(shown[0])}–${pad(shown[1])}` : pad(shown[0] ?? 0)
 
   return createPortal(
     <AnimatePresence>
@@ -120,9 +148,21 @@ export function Lightbox({ items, index, onClose, onIndex, title = '' }) {
           <header className="lb-bar">
             <div className="lb-title">
               {title && <strong>{title}</strong>}
-              {n > 1 && <span className="lb-count">{String(index + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</span>}
+              {n > 1 && <span className="lb-count">{countText} / {String(n).padStart(2, '0')}</span>}
             </div>
             <div className="lb-tools">
+              {wide && n > 2 && (
+                <div className="lb-mode" role="group" aria-label="Page layout">
+                  <button className={!dual ? 'on' : ''} onClick={() => setDualPref(false)} aria-pressed={!dual} title="Single page (D)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="4" width="10" height="16" rx="1.5" /></svg>
+                    <span>Single</span>
+                  </button>
+                  <button className={dual ? 'on' : ''} onClick={() => setDualPref(true)} aria-pressed={dual} title="Dual pages (D)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="8.5" height="14" rx="1.2" /><rect x="12.5" y="5" width="8.5" height="14" rx="1.2" /></svg>
+                    <span>Dual</span>
+                  </button>
+                </div>
+              )}
               <button className={`lb-icon ${zoom ? 'on' : ''}`} onClick={() => setZoom((z) => !z)} aria-pressed={zoom}
                 aria-label={zoom ? 'Zoom out' : 'Zoom in'} title={zoom ? 'Zoom out (Z)' : 'Zoom in (Z)'}>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5M8.5 11h5" />{!zoom && <path d="M11 8.5v5" />}</svg>
@@ -135,12 +175,18 @@ export function Lightbox({ items, index, onClose, onIndex, title = '' }) {
 
           <div className={`lb-stage ${zoom ? 'zoomed' : ''}`} onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
             <AnimatePresence mode="wait" initial={false}>
-              <motion.img key={item.src} src={item.src} alt={item.alt || title}
+              <motion.div key={shown.join('-') + (dual ? 'd' : 's')} className={`lb-spread ${shown.length === 2 ? 'two' : ''}`}
+                onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
                 initial={{ opacity: 0, scale: 0.97, filter: 'blur(8px)' }} animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                 exit={{ opacity: 0, scale: 1.01 }} transition={{ duration: 0.45, ease }}
                 drag={!zoom && n > 1 ? 'x' : false} dragConstraints={{ left: 0, right: 0 }} dragElastic={0.35}
                 onDragEnd={(_, info) => { if (Math.abs(info.offset.x) > 60) go(info.offset.x < 0 ? 1 : -1) }}
-                onDoubleClick={() => setZoom((z) => !z)} draggable="false" />
+                onDoubleClick={() => setZoom((z) => !z)}>
+                {shown.map((i) => (
+                  <img key={items[i].src} src={items[i].src} alt={items[i].alt || title} draggable="false"
+                    width={items[i].w} height={items[i].h} />
+                ))}
+              </motion.div>
             </AnimatePresence>
           </div>
 
@@ -157,15 +203,16 @@ export function Lightbox({ items, index, onClose, onIndex, title = '' }) {
             {n > 1 && (
               <div className="lb-thumbs" ref={thumbsRef}>
                 {items.map((it, i) => (
-                  <button key={it.src} className={i === index ? 'on' : ''} onClick={() => onIndex(i)}
-                    aria-label={`Show image ${i + 1}`} aria-current={i === index}>
-                    <img src={it.src} alt="" loading="lazy" />
+                  <button key={it.src} className={shown.includes(i) ? 'on' : ''} onClick={() => onIndex(i)}
+                    aria-label={`Show page ${i + 1}`} aria-current={shown.includes(i)}>
+                    <img src={it.thumb || it.src} alt="" loading="lazy" />
+                    <span>{i + 1}</span>
                   </button>
                 ))}
               </div>
             )}
             <span className="lb-hint">
-              <span className="hint-desk">← → to browse · Z or double-click to zoom · Esc to close</span>
+              <span className="hint-desk">← → to browse · {wide && n > 2 ? 'D for dual pages · ' : ''}Z or double-click to zoom · Esc to close</span>
               <span className="hint-touch">Swipe to browse · double-tap to zoom</span>
             </span>
           </footer>

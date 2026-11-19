@@ -32,32 +32,44 @@ export const looks = [
 export const runway = manifest.runway.map((i) => ({ ...i, src: img(i.src) }))
 export const portrait = img(manifest.portrait)
 export const brand = Object.fromEntries(Object.entries(manifest.brand).map(([k, v]) => [k, img(v)]))
-const pages = (k) => manifest.pages[k].map((i) => ({ ...i, src: img(i.src) }))
+/* Full documents — every page of each PDF, with a small thumbnail per page */
+const doc = (k, title, from = 0, to) =>
+  manifest.docs[k].slice(from, to).map((p, i) => ({
+    src: img(p.src), thumb: img(p.thumb), w: p.w, h: p.h,
+    alt: `${title} — page ${from + i + 1}`,
+  }))
 
 export const projects = [
   {
+    id: 'lookbook', title: 'Thama Nibbana — Look Book', kind: 'Final collection · Look book', featured: true,
+    blurb: 'The graduate collection photographed — six looks of hand-dyed calico, from the restless mind to release, across a 36-page look book.',
+    pages: doc('lookbook', 'Thama Nibbana Look Book'), cover: 35,
+  },
+  {
     id: 'samsara', title: 'Samsara', kind: 'Follow-on project · Menswear',
     blurb: 'The journey from birth to Nirvana — biomorphic prints, chakra colour and layered gauze over DTF, told through menswear silhouettes.',
-    pages: pages('samsara'),
+    pages: doc('portfolio', 'Samsara', 25, 37), cover: 10,
   },
   {
     id: 'versace', title: 'Aura × Versace', kind: 'Collaboration project',
     blurb: 'Inspired by aura photography — the human energy field as colour — with sculptural headwraps drawn from African, Tibetan and Celtic traditions.',
-    pages: pages('versace'),
+    pages: doc('portfolio', 'Aura × Versace', 37, 49), cover: 10,
   },
   {
     id: 'heritage', title: 'Heritage', kind: 'Print & embroidery study',
     blurb: 'Buddhist heritage and Sri Lankan craft — Beeralu lace, Lakshā and embroidery motifs reimagined as contemporary prints in a Delpozo-inspired range.',
-    pages: pages('heritage'),
+    pages: doc('heritage', 'Heritage project'), cover: 23,
   },
   {
     id: 'choice', title: 'The Power of Choice', kind: 'Second-year final project',
     blurb: 'Armour, structure and softness — a tailored womenswear range exploring strength, freedom and the quiet confidence of choosing for oneself.',
-    pages: pages('choice'),
+    pages: doc('choice', 'The Power of Choice'), cover: 17,
   },
 ]
 
-export const nibbanaPages = pages('nibbana')
+/* The complete graduate portfolio (all 49 pages); the strip shows a few highlights */
+export const nibbanaPages = doc('portfolio', 'Graduate portfolio')
+export const nibbanaHighlights = [6, 8, 9, 23, 24]
 
 const C = brand
 export const mamathwaya = [

@@ -478,107 +478,789 @@
   "red": "brand/c01/red.webp",
   "yellow": "brand/c01/yellow.webp"
  },
- "pages": {
-  "nibbana": [
+ "portrait": "lakshi-portrait.webp",
+ "docs": {
+  "portfolio": [
    {
-    "src": "pages/nibbana-07.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p01.webp",
+    "thumb": "docs/portfolio/t01.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/nibbana-09.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p02.webp",
+    "thumb": "docs/portfolio/t02.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/nibbana-10.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p03.webp",
+    "thumb": "docs/portfolio/t03.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/nibbana-24.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p04.webp",
+    "thumb": "docs/portfolio/t04.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/nibbana-25.webp",
-    "w": 1072,
-    "h": 758
-   }
-  ],
-  "samsara": [
-   {
-    "src": "pages/samsara-28.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p05.webp",
+    "thumb": "docs/portfolio/t05.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/samsara-30.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p06.webp",
+    "thumb": "docs/portfolio/t06.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/samsara-31.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p07.webp",
+    "thumb": "docs/portfolio/t07.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/samsara-36.webp",
-    "w": 1072,
-    "h": 758
-   }
-  ],
-  "versace": [
-   {
-    "src": "pages/versace-40.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p08.webp",
+    "thumb": "docs/portfolio/t08.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/versace-42.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p09.webp",
+    "thumb": "docs/portfolio/t09.webp",
+    "w": 1700,
+    "h": 1203
    },
    {
-    "src": "pages/versace-48.webp",
-    "w": 1072,
-    "h": 758
+    "src": "docs/portfolio/p10.webp",
+    "thumb": "docs/portfolio/t10.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p11.webp",
+    "thumb": "docs/portfolio/t11.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p12.webp",
+    "thumb": "docs/portfolio/t12.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p13.webp",
+    "thumb": "docs/portfolio/t13.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p14.webp",
+    "thumb": "docs/portfolio/t14.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p15.webp",
+    "thumb": "docs/portfolio/t15.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p16.webp",
+    "thumb": "docs/portfolio/t16.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p17.webp",
+    "thumb": "docs/portfolio/t17.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p18.webp",
+    "thumb": "docs/portfolio/t18.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p19.webp",
+    "thumb": "docs/portfolio/t19.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p20.webp",
+    "thumb": "docs/portfolio/t20.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p21.webp",
+    "thumb": "docs/portfolio/t21.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p22.webp",
+    "thumb": "docs/portfolio/t22.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p23.webp",
+    "thumb": "docs/portfolio/t23.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p24.webp",
+    "thumb": "docs/portfolio/t24.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p25.webp",
+    "thumb": "docs/portfolio/t25.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p26.webp",
+    "thumb": "docs/portfolio/t26.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p27.webp",
+    "thumb": "docs/portfolio/t27.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p28.webp",
+    "thumb": "docs/portfolio/t28.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p29.webp",
+    "thumb": "docs/portfolio/t29.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p30.webp",
+    "thumb": "docs/portfolio/t30.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p31.webp",
+    "thumb": "docs/portfolio/t31.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p32.webp",
+    "thumb": "docs/portfolio/t32.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p33.webp",
+    "thumb": "docs/portfolio/t33.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p34.webp",
+    "thumb": "docs/portfolio/t34.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p35.webp",
+    "thumb": "docs/portfolio/t35.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p36.webp",
+    "thumb": "docs/portfolio/t36.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p37.webp",
+    "thumb": "docs/portfolio/t37.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p38.webp",
+    "thumb": "docs/portfolio/t38.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p39.webp",
+    "thumb": "docs/portfolio/t39.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p40.webp",
+    "thumb": "docs/portfolio/t40.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p41.webp",
+    "thumb": "docs/portfolio/t41.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p42.webp",
+    "thumb": "docs/portfolio/t42.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p43.webp",
+    "thumb": "docs/portfolio/t43.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p44.webp",
+    "thumb": "docs/portfolio/t44.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p45.webp",
+    "thumb": "docs/portfolio/t45.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p46.webp",
+    "thumb": "docs/portfolio/t46.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p47.webp",
+    "thumb": "docs/portfolio/t47.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p48.webp",
+    "thumb": "docs/portfolio/t48.webp",
+    "w": 1700,
+    "h": 1203
+   },
+   {
+    "src": "docs/portfolio/p49.webp",
+    "thumb": "docs/portfolio/t49.webp",
+    "w": 1700,
+    "h": 1203
    }
   ],
   "heritage": [
    {
-    "src": "pages/heritage-01.webp",
-    "w": 1191,
-    "h": 842
+    "src": "docs/heritage/p01.webp",
+    "thumb": "docs/heritage/t01.webp",
+    "w": 1700,
+    "h": 1202
    },
    {
-    "src": "pages/heritage-08.webp",
-    "w": 1191,
-    "h": 842
+    "src": "docs/heritage/p02.webp",
+    "thumb": "docs/heritage/t02.webp",
+    "w": 1700,
+    "h": 1202
    },
    {
-    "src": "pages/heritage-24.webp",
-    "w": 1191,
-    "h": 842
+    "src": "docs/heritage/p03.webp",
+    "thumb": "docs/heritage/t03.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p04.webp",
+    "thumb": "docs/heritage/t04.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p05.webp",
+    "thumb": "docs/heritage/t05.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p06.webp",
+    "thumb": "docs/heritage/t06.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p07.webp",
+    "thumb": "docs/heritage/t07.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p08.webp",
+    "thumb": "docs/heritage/t08.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p09.webp",
+    "thumb": "docs/heritage/t09.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p10.webp",
+    "thumb": "docs/heritage/t10.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p11.webp",
+    "thumb": "docs/heritage/t11.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p12.webp",
+    "thumb": "docs/heritage/t12.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p13.webp",
+    "thumb": "docs/heritage/t13.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p14.webp",
+    "thumb": "docs/heritage/t14.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p15.webp",
+    "thumb": "docs/heritage/t15.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p16.webp",
+    "thumb": "docs/heritage/t16.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p17.webp",
+    "thumb": "docs/heritage/t17.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p18.webp",
+    "thumb": "docs/heritage/t18.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p19.webp",
+    "thumb": "docs/heritage/t19.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p20.webp",
+    "thumb": "docs/heritage/t20.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p21.webp",
+    "thumb": "docs/heritage/t21.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p22.webp",
+    "thumb": "docs/heritage/t22.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p23.webp",
+    "thumb": "docs/heritage/t23.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/heritage/p24.webp",
+    "thumb": "docs/heritage/t24.webp",
+    "w": 1700,
+    "h": 1202
    }
   ],
   "choice": [
    {
-    "src": "pages/choice-02.webp",
-    "w": 1191,
-    "h": 842
+    "src": "docs/choice/p01.webp",
+    "thumb": "docs/choice/t01.webp",
+    "w": 1700,
+    "h": 1202
    },
    {
-    "src": "pages/choice-18.webp",
-    "w": 1191,
-    "h": 842
+    "src": "docs/choice/p02.webp",
+    "thumb": "docs/choice/t02.webp",
+    "w": 1700,
+    "h": 1202
    },
    {
-    "src": "pages/choice-19.webp",
-    "w": 1191,
-    "h": 842
+    "src": "docs/choice/p03.webp",
+    "thumb": "docs/choice/t03.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p04.webp",
+    "thumb": "docs/choice/t04.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p05.webp",
+    "thumb": "docs/choice/t05.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p06.webp",
+    "thumb": "docs/choice/t06.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p07.webp",
+    "thumb": "docs/choice/t07.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p08.webp",
+    "thumb": "docs/choice/t08.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p09.webp",
+    "thumb": "docs/choice/t09.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p10.webp",
+    "thumb": "docs/choice/t10.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p11.webp",
+    "thumb": "docs/choice/t11.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p12.webp",
+    "thumb": "docs/choice/t12.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p13.webp",
+    "thumb": "docs/choice/t13.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p14.webp",
+    "thumb": "docs/choice/t14.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p15.webp",
+    "thumb": "docs/choice/t15.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p16.webp",
+    "thumb": "docs/choice/t16.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p17.webp",
+    "thumb": "docs/choice/t17.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p18.webp",
+    "thumb": "docs/choice/t18.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p19.webp",
+    "thumb": "docs/choice/t19.webp",
+    "w": 1700,
+    "h": 1202
+   },
+   {
+    "src": "docs/choice/p20.webp",
+    "thumb": "docs/choice/t20.webp",
+    "w": 1700,
+    "h": 1202
+   }
+  ],
+  "lookbook": [
+   {
+    "src": "docs/lookbook/p01.webp",
+    "thumb": "docs/lookbook/t01.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p02.webp",
+    "thumb": "docs/lookbook/t02.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p03.webp",
+    "thumb": "docs/lookbook/t03.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p04.webp",
+    "thumb": "docs/lookbook/t04.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p05.webp",
+    "thumb": "docs/lookbook/t05.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p06.webp",
+    "thumb": "docs/lookbook/t06.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p07.webp",
+    "thumb": "docs/lookbook/t07.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p08.webp",
+    "thumb": "docs/lookbook/t08.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p09.webp",
+    "thumb": "docs/lookbook/t09.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p10.webp",
+    "thumb": "docs/lookbook/t10.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p11.webp",
+    "thumb": "docs/lookbook/t11.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p12.webp",
+    "thumb": "docs/lookbook/t12.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p13.webp",
+    "thumb": "docs/lookbook/t13.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p14.webp",
+    "thumb": "docs/lookbook/t14.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p15.webp",
+    "thumb": "docs/lookbook/t15.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p16.webp",
+    "thumb": "docs/lookbook/t16.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p17.webp",
+    "thumb": "docs/lookbook/t17.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p18.webp",
+    "thumb": "docs/lookbook/t18.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p19.webp",
+    "thumb": "docs/lookbook/t19.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p20.webp",
+    "thumb": "docs/lookbook/t20.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p21.webp",
+    "thumb": "docs/lookbook/t21.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p22.webp",
+    "thumb": "docs/lookbook/t22.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p23.webp",
+    "thumb": "docs/lookbook/t23.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p24.webp",
+    "thumb": "docs/lookbook/t24.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p25.webp",
+    "thumb": "docs/lookbook/t25.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p26.webp",
+    "thumb": "docs/lookbook/t26.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p27.webp",
+    "thumb": "docs/lookbook/t27.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p28.webp",
+    "thumb": "docs/lookbook/t28.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p29.webp",
+    "thumb": "docs/lookbook/t29.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p30.webp",
+    "thumb": "docs/lookbook/t30.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p31.webp",
+    "thumb": "docs/lookbook/t31.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p32.webp",
+    "thumb": "docs/lookbook/t32.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p33.webp",
+    "thumb": "docs/lookbook/t33.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p34.webp",
+    "thumb": "docs/lookbook/t34.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p35.webp",
+    "thumb": "docs/lookbook/t35.webp",
+    "w": 1700,
+    "h": 1700
+   },
+   {
+    "src": "docs/lookbook/p36.webp",
+    "thumb": "docs/lookbook/t36.webp",
+    "w": 1700,
+    "h": 1700
    }
   ]
- },
- "portrait": "lakshi-portrait.webp"
+ }
 }
