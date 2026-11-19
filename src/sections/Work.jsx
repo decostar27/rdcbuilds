@@ -4,7 +4,7 @@ import { Reveal, Words, Label, Lightbox } from '../components/ui.jsx'
 import { Mandala } from '../components/Ambient.jsx'
 import { TiltedCard } from '../components/effects.jsx'
 import { SilaIcon, SamadhiIcon, PannaIcon } from '../components/StageIcons.jsx'
-import { looks, runway, projects, nibbanaPages, nibbanaHighlights } from '../data.js'
+import { looks, runway, projects } from '../data.js'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -174,8 +174,6 @@ function Projects() {
 }
 
 export default function Work() {
-  const [lb, setLb] = useState(null)
-  const close = useCallback(() => setLb(null), [])
   return (
     <section id="work" className="section work">
       <Label num="02">Work</Label>
@@ -213,26 +211,6 @@ export default function Work() {
       </div>
 
       <LookExplorer />
-
-      <div className="process">
-        <Reveal className="process-head">
-          <div>
-            <span className="fc-k">From the portfolio</span>
-            <h3 className="h3">Concept · print · fabric · line-up</h3>
-          </div>
-          <button className="btn btn-ghost" onClick={() => setLb(0)}>Read the full portfolio · {nibbanaPages.length} pages</button>
-        </Reveal>
-        <div className="process-strip">
-          {nibbanaHighlights.map((n, i) => (
-            <Reveal key={n} delay={i * 0.08} className="process-item">
-              <button onClick={() => setLb(n)} aria-label={`Open portfolio page ${n + 1}`}>
-                <img src={nibbanaPages[n].src} alt={nibbanaPages[n].alt} loading="lazy" />
-              </button>
-            </Reveal>
-          ))}
-        </div>
-        <Lightbox items={nibbanaPages} index={lb} onClose={close} onIndex={setLb} title="Graduate portfolio · Lakshi Milani" />
-      </div>
 
       <Runway />
       <Projects />

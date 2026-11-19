@@ -67,9 +67,6 @@ export const projects = [
   },
 ]
 
-/* The complete graduate portfolio (all 49 pages); the strip shows a few highlights */
-export const nibbanaPages = doc('portfolio', 'Graduate portfolio')
-export const nibbanaHighlights = [6, 8, 9, 23, 24]
 
 const C = brand
 export const mamathwaya = [
