@@ -13,9 +13,9 @@ const dye = {
 }
 
 const notes = {
-  MW001: 'A layered, open wrap that falls in soft panels — wear it loose, or tie it close.',
+  MW001: 'A layered, open wrap that falls in soft panels. Wear it loose, or tie it close.',
   MW002: 'A free-flowing shift with ribbon ties down the sides to gather and shape it to you.',
-  MW003: 'Relaxed shorts with tie-gathered hems — easy, breathable, made for warm days.',
+  MW003: 'Relaxed shorts with tie-gathered hems. Easy and breathable, made for warm days.',
   MW004: 'Wide trousers with drawstring-gathered legs that adjust to every body.',
   MW005: 'A long-sleeved blouse closed with a cascade of soft fabric bows.',
   MW006: 'A cropped open jacket with dramatic, angled sleeves that move as you do.',
@@ -108,7 +108,7 @@ export default function DyeLine() {
       <div className="dye-head">
         <span className="fc-k">Collection 01 · Hand-dyed Shibori</span>
         <h3 className="h2"><Words text="Free size, free spirit" /></h3>
-        <Reveal><p>Six free-size pieces, folded, bound and dyed by hand — left to dry in the sun. Choose one from the line.</p></Reveal>
+        <Reveal><p>Six free-size pieces, folded, bound and dyed by hand, then left to dry in the sun. Pick one from the line.</p></Reveal>
       </div>
 
       <div className="line-area">
@@ -144,8 +144,8 @@ export default function DyeLine() {
 
         <div className="dye-info">
           <AnimatePresence mode="wait">
-            <motion.div key={piece.code} initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} exit={{ opacity: 0, y: -12, filter: 'blur(6px)' }}
+            <motion.div key={piece.code} initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.7, ease }}>
               <span className="dye-code">{piece.code}</span>
               <h4 className="dye-name">{piece.name}</h4>
@@ -172,7 +172,7 @@ export default function DyeLine() {
             <li><span>Dyed</span>By hand, in small batches</li>
             <li><span>Technique</span>Shibori fold &amp; bind</li>
           </ul>
-          <p className="dye-unique">✺ Every piece is folded and dyed by hand, so no two are ever exactly alike.</p>
+          <p className="dye-unique">Every piece is folded and dyed by hand, so no two are ever exactly alike.</p>
 
           {phone && (
             <div className="dye-pager">

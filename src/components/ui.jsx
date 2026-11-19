@@ -4,33 +4,31 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1]
 
-export function Reveal({ children, delay = 0, y = 40, className = '', as = 'div' }) {
+/* Content eases up into place — opacity + transform only, so it stays on the GPU */
+export function Reveal({ children, delay = 0, y = 24, className = '', as = 'div' }) {
   const M = motion[as]
   return (
     <M className={className}
-      initial={{ opacity: 0, y, filter: 'blur(8px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '-12% 0px' }}
-      transition={{ duration: 1.2, delay, ease }}>
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-8% 0px' }}
+      transition={{ duration: 0.8, delay: Math.min(delay, 0.4), ease }}>
       {children}
     </M>
   )
 }
 
-/* Words float up one by one, like a slow exhale */
-export function Words({ text, className = '', delay = 0, stagger = 0.06 }) {
+/* Headings rise word by word from behind a mask (editorial style) */
+export function Words({ text, className = '', delay = 0, stagger = 0.05 }) {
   return (
     <motion.span className={className} aria-label={text} initial="hide" whileInView="show" viewport={{ once: true }}>
       {text.split(' ').map((w, i) => (
-        <span key={i} className="word-mask" aria-hidden="true" style={{ marginRight: '0.25em' }}>
+        <span key={i} className="word-mask" aria-hidden="true">
           <motion.span className="word"
-            variants={{
-              hide: { y: '90%', opacity: 0, rotateX: 70, filter: 'blur(10px)' },
-              show: { y: '0%', opacity: 1, rotateX: 0, filter: 'blur(0px)' },
-            }}
-            transition={{ duration: 1.4, delay: delay + i * stagger, ease }}>
+            variants={{ hide: { y: '105%' }, show: { y: '0%' } }}
+            transition={{ duration: 0.85, delay: delay + i * stagger, ease }}>
             {w}
-          </motion.span>{' '}
+          </motion.span>
         </span>
       ))}
     </motion.span>
@@ -177,7 +175,7 @@ export function Lightbox({ items, index, onClose, onIndex, title = '', book = fa
             <AnimatePresence mode="wait" initial={false}>
               <motion.div key={shown.join('-') + (dual ? 'd' : 's')} className={`lb-spread ${shown.length === 2 ? 'two' : ''}`}
                 onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
-                initial={{ opacity: 0, scale: 0.97, filter: 'blur(8px)' }} animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.01 }} transition={{ duration: 0.45, ease }}
                 drag={!zoom && n > 1 ? 'x' : false} dragConstraints={{ left: 0, right: 0 }} dragElastic={0.35}
                 onDragEnd={(_, info) => { if (Math.abs(info.offset.x) > 60) go(info.offset.x < 0 ? 1 : -1) }}

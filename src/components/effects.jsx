@@ -82,40 +82,33 @@ export function CircularText({ text, size = 150, className = '', children, durat
   )
 }
 
-/* React Bits-style blur text: words resolve out of a soft blur */
+/* Display text: each word rises from behind a mask (transform only, no blur) */
 export function BlurText({ text, className = '', delay = 0, stagger = 0.08, as = 'span', start }) {
   const M = motion[as]
   const trigger = start === undefined ? { whileInView: 'show', viewport: { once: true } } : { animate: start ? 'show' : 'hide' }
   return (
     <M className={className} aria-label={text} initial="hide" {...trigger}>
       {text.split(' ').map((w, i) => (
-        <motion.span key={i} className="blur-word" aria-hidden="true"
-          variants={{
-            hide: { opacity: 0, filter: 'blur(14px)', y: 24, rotateX: 50 },
-            show: { opacity: 1, filter: 'blur(0px)', y: 0, rotateX: 0 },
-          }}
-          transition={{ duration: 1.4, delay: delay + i * stagger, ease }}>
-          {w}{' '}
-        </motion.span>
+        <span key={i} className="word-mask" aria-hidden="true">
+          <motion.span className="word" variants={{ hide: { y: '105%' }, show: { y: '0%' } }}
+            transition={{ duration: 0.9, delay: delay + i * stagger, ease }}>
+            {w}
+          </motion.span>
+        </span>
       ))}
     </M>
   )
 }
 
-/* Aceternity-style text generate: words fade in one by one */
+/* Paragraph that simply fades up once */
 export function TextGenerate({ text, className = '', delay = 0 }) {
   return (
-    <motion.p className={className} initial="hide" whileInView="show" viewport={{ once: true, margin: '-10% 0px' }}>
-      {text.split(' ').map((w, i) => (
-        <motion.span key={i} variants={{ hide: { opacity: 0, filter: 'blur(6px)' }, show: { opacity: 1, filter: 'blur(0px)' } }}
-          transition={{ duration: 0.8, delay: delay + i * 0.035 }}>
-          {w}{' '}
-        </motion.span>
-      ))}
+    <motion.p className={className} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-8% 0px' }} transition={{ duration: 0.8, delay, ease }}>
+      {text}
     </motion.p>
   )
 }
-
 /* Aceternity-style spotlight beam */
 export function Spotlight({ className = '' }) {
   return (

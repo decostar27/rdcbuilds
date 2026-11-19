@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import { motion, MotionConfig, useScroll, useSpring } from 'framer-motion'
 import Lenis from 'lenis'
-import { AuraField, Motes, CursorHalo, Intro } from './components/Ambient.jsx'
+import { Grain, Intro, introSeen } from './components/Ambient.jsx'
 import ShaderSky from './components/ShaderSky.jsx'
 import Hero from './sections/Hero.jsx'
 import About, { Marquee } from './sections/About.jsx'
@@ -28,7 +28,7 @@ function Nav() {
   }, [])
 
   return (
-    <motion.header className="nav-wrap" initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1.2, delay: 0.4 }}>
+    <motion.header className="nav-wrap" initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
       <nav className="nav glass">
         <a href="#home" className="brand-mark">L<span>·</span>M</a>
         <ul className={open ? 'open' : ''}>
@@ -51,12 +51,13 @@ function Nav() {
 }
 
 export default function App() {
-  const [ready, setReady] = useState(false)
+  const [ready, setReady] = useState(introSeen)
   const done = useCallback(() => setReady(true), [])
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const lenis = new Lenis({ duration: 1.4, smoothWheel: true })
+    // light smoothing only — responsive, never "floaty"
+    const lenis = new Lenis({ lerp: 0.14, smoothWheel: true, wheelMultiplier: 1 })
     let raf
     const loop = (t) => { lenis.raf(t); raf = requestAnimationFrame(loop) }
     raf = requestAnimationFrame(loop)
@@ -64,7 +65,7 @@ export default function App() {
       const a = e.target.closest('a[href^="#"]')
       if (!a) return
       e.preventDefault()
-      lenis.scrollTo(a.getAttribute('href'), { offset: 0, duration: 2 })
+      lenis.scrollTo(a.getAttribute('href'), { offset: 0, duration: 1.1 })
     }
     document.addEventListener('click', onClick)
     return () => { cancelAnimationFrame(raf); lenis.destroy(); document.removeEventListener('click', onClick) }
@@ -73,9 +74,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <ShaderSky />
-      <AuraField />
-      <Motes />
-      <CursorHalo />
+      <Grain />
       <Intro done={ready} onDone={done} />
       <Nav />
       <main>

@@ -12,7 +12,7 @@ export function Marquee() {
     <div className="marquee" aria-hidden="true">
       <div className="marquee-track">
         {[...words, ...words, ...words].map((w, i) => (
-          <span key={i}>{w}<i>✺</i></span>
+          <span key={i}>{w}<i>·</i></span>
         ))}
       </div>
     </div>
@@ -56,7 +56,7 @@ export default function About() {
             <p>
               Working inside the industry has deepened my understanding of product development,
               trend analysis, material exploration and collaborative design. My heart, though, lives in
-              the dye bath — where calico drinks in colour, and each fold of Shibori becomes a small
+              the dye bath, where calico drinks in colour, and each fold of Shibori becomes a small
               meditation. I am now looking to expand my practice through postgraduate study and to
               contribute to an evolving, more conscious global fashion industry.
             </p>

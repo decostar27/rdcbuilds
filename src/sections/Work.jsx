@@ -9,8 +9,8 @@ import { looks, runway, projects } from '../data.js'
 const ease = [0.22, 1, 0.36, 1]
 
 const stages = [
-  { k: 'Sila', t: 'Morality', d: 'Grounded tones and steady forms — the first discipline of a quiet mind.', c: 'radial-gradient(circle at 35% 30%, #B08A72, var(--earth-brown))', Icon: SilaIcon },
-  { k: 'Samadhi', t: 'Concentration', d: 'Calm, balanced shades for Buddhi — clarity, focus and decision.', c: 'radial-gradient(circle at 35% 30%, var(--mist-teal), var(--cosmic-blue))', Icon: SamadhiIcon },
+  { k: 'Sila', t: 'Morality', d: 'Grounded tones and steady forms. The first discipline of a quiet mind.', c: 'radial-gradient(circle at 35% 30%, #B08A72, var(--earth-brown))', Icon: SilaIcon },
+  { k: 'Samadhi', t: 'Concentration', d: 'Calm, balanced shades for Buddhi: clarity, focus and decision.', c: 'radial-gradient(circle at 35% 30%, var(--mist-teal), var(--cosmic-blue))', Icon: SamadhiIcon },
   { k: 'Panna', t: 'Wisdom', d: 'Colours blended and faded until the boundaries dissolve into light.', c: 'radial-gradient(circle at 35% 30%, #DDB4B9, #A8737C)', Icon: PannaIcon },
 ]
 
@@ -38,8 +38,8 @@ function LookExplorer() {
         <div className="explorer-stage">
           <AnimatePresence mode="wait">
             <motion.button key={look.images[shot].src} className="explorer-main" onClick={() => setLb(shot)}
-              initial={{ opacity: 0, scale: 1.04, filter: 'blur(14px)' }} animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, scale: 0.98, filter: 'blur(10px)' }} transition={{ duration: 0.8, ease }}
+              initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.8, ease }}
               aria-label="Open image full screen">
               <img src={look.images[shot].src} alt={`Look ${look.n} — ${look.title}`} />
             </motion.button>
@@ -68,7 +68,7 @@ function LookExplorer() {
           </div>
         </div>
       </div>
-      <Lightbox items={look.images} index={lb} onClose={close} onIndex={setLb} title={`Thama Nibbana · Look ${look.n} — ${look.title}`} />
+      <Lightbox items={look.images} index={lb} onClose={close} onIndex={setLb} title={`Thama Nibbana · Look ${look.n}, ${look.title}`} />
     </div>
   )
 }
@@ -97,12 +97,12 @@ function Runway() {
           <div className="runway-head">
             <div>
               <h3 className="h2"><Words text="On the runway" /></h3>
-              <p>A collection exploring South Asian craftsmanship — Shibori, tie-dye and traditional batik — selected for the Talented Designer showcase.</p>
+              <p>Shibori, tie-dye and traditional batik, shown in the Talented Designer showcase.</p>
             </div>
             <div className="runway-count" aria-live="polite">
               <AnimatePresence mode="popLayout">
-                <motion.strong key={count} initial={{ y: 30, opacity: 0, filter: 'blur(6px)' }} animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-                  exit={{ y: -30, opacity: 0, filter: 'blur(6px)' }} transition={{ duration: 0.5, ease }}>{pad(count)}</motion.strong>
+                <motion.strong key={count} initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -30, opacity: 0 }} transition={{ duration: 0.5, ease }}>{pad(count)}</motion.strong>
               </AnimatePresence>
               <span>/ {pad(runway.length)}</span>
             </div>
@@ -145,7 +145,7 @@ function Projects() {
     <div className="projects">
       <div className="projects-head">
         <h3 className="h2"><Words text="More from the studio" /></h3>
-        <Reveal><p>Portfolio projects — research, print development, illustration and line-ups.</p></Reveal>
+        <Reveal><p>Research, print development, illustration and line-ups from university projects.</p></Reveal>
       </div>
       <div className="project-grid">
         {projects.map((pr, i) => (
@@ -184,7 +184,7 @@ export default function Work() {
         <h2 className="display center"><Words text="Thama Nibbana" stagger={0.12} /></h2>
         <Reveal delay={0.3}>
           <p className="lead center narrow">
-            The modern world moves on autopilot. This collection imagines a way back — the inner workings of
+            The modern world moves on autopilot. This collection imagines a way back: the inner workings of
             the mind during meditation, translated into hand-dyed calico, doodled prints and voluminous,
             breathing silhouettes. A journey from distraction to awareness, ego to consciousness,
             chaos to inner peace.

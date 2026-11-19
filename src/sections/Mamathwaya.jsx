@@ -27,14 +27,14 @@ export default function Mamathwaya() {
           <Reveal delay={0.2}>
             <p className="lead">
               A small, slow label founded by Lakshi Milani in 2026. Free-size garments, each hand-dyed with Shibori
-              folds so no two pieces ever carry the same pattern — and handcrafted scented candles, poured to
+              folds so no two pieces ever carry the same pattern. Alongside them, handcrafted scented candles, poured to
               bring that same stillness into the home.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
             <p>
               Mamathwaya is stocked through a consignment partnership with <strong>Urban Island</strong>.
-              Every step — design, dyeing, costing, branding and merchandising — happens by hand, in small batches.
+              Design, dyeing, costing, branding and merchandising all happen by hand, in small batches.
             </p>
           </Reveal>
           <Reveal delay={0.4} className="mw-cards">
@@ -52,7 +52,7 @@ export default function Mamathwaya() {
         <div className="candles-head">
           <span className="fc-k">Home ritual</span>
           <h3 className="h2"><Words text="Hand-poured light" /></h3>
-          <Reveal><p>Flower-form scented candles wrapped in tulle and tied with jute — a small offering of calm.</p></Reveal>
+          <Reveal><p>Flower-form scented candles wrapped in tulle and tied with jute.</p></Reveal>
         </div>
         <div className="candle-row">
           {candles.map((c, i) => (

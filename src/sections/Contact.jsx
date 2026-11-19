@@ -14,7 +14,7 @@ export default function Contact() {
       <Label num="04">Contact</Label>
       <div className="contact-inner">
         <div className="contact-mandala"><div className="spin-slow"><Mandala size={720} /></div></div>
-        <motion.div className="breath-orb" animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }} />
+        <div className="breath-orb" aria-hidden="true" />
         <h2 className="display center"><Words text="Let's create something" /><br /><Words text="mindful." className="t-italic" delay={0.4} /></h2>
         <Reveal delay={0.3}>
           <p className="lead center narrow">
@@ -36,7 +36,7 @@ export default function Contact() {
       <footer className="footer">
         <img src={brand.mark} alt="" />
         <span>© {new Date().getFullYear()} Lakshi Milani</span>
-        <span className="fc-k">May all beings be well & happy</span>
+        <span className="fc-k">Fashion &amp; textile design · Sri Lanka</span>
       </footer>
     </section>
   )

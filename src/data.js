@@ -5,7 +5,7 @@ export const img = (p) => `/images/${p}`
 export const looks = [
   {
     n: 'I', key: '1', title: 'The Restless Mind', stage: 'Manas',
-    text: 'A hooded cape draped over one shoulder, a wide-leg pant with circular tie-up panels, and a tunic of curved, petal-like panels — the curious, wandering mind at the start of practice.',
+    text: 'A hooded cape draped over one shoulder, a wide-leg pant with circular tie-up panels, and a tunic of curved, petal-like panels. The curious, wandering mind at the start of practice.',
   },
   {
     n: 'II', key: '2', title: 'Threads of Attention', stage: 'Sila',
@@ -25,7 +25,7 @@ export const looks = [
   },
   {
     n: 'VI', key: '6', title: 'Release', stage: 'Nibbana',
-    text: 'Box-pleated wide-leg pants gathered at the side, an asymmetric layered tunic, and a one-sided cape tied around the neck — fluid, unbound, at peace.',
+    text: 'Box-pleated wide-leg pants gathered at the side, an asymmetric layered tunic, and a one-sided cape tied around the neck. Fluid, unbound, at peace.',
   },
 ].map((l) => ({ ...l, images: manifest.looks[l.key].map((i) => ({ ...i, src: img(i.src) })) }))
 
@@ -41,28 +41,28 @@ const doc = (k, title, from = 0, to) =>
 
 export const projects = [
   {
-    id: 'nibbana-portfolio', title: 'Thama Nibbana — Portfolio', kind: 'Final collection · Design development', featured: true,
-    blurb: 'Behind the collection — concept and colour boards, doodled print development, hand-dyed fabric experiments, the six look illustrations and the final line-up.',
+    id: 'nibbana-portfolio', title: 'Thama Nibbana Portfolio', kind: 'Final collection · Design development', featured: true,
+    blurb: 'Behind the collection: concept and colour boards, doodled print development, hand-dyed fabric experiments, the six look illustrations and the final line-up.',
     pages: doc('portfolio', 'Thama Nibbana Portfolio', 0, 25), cover: 24,
   },
   {
     id: 'samsara', title: 'Samsara', kind: 'Follow-on project · Menswear',
-    blurb: 'The journey from birth to Nirvana — biomorphic prints, chakra colour and layered gauze over DTF, told through menswear silhouettes.',
+    blurb: 'The journey from birth to Nirvana in menswear. Biomorphic prints, chakra colour and layered gauze over DTF.',
     pages: doc('portfolio', 'Samsara', 25, 37), cover: 10,
   },
   {
     id: 'versace', title: 'Aura × Versace', kind: 'Collaboration project',
-    blurb: 'Inspired by aura photography — the human energy field as colour — with sculptural headwraps drawn from African, Tibetan and Celtic traditions.',
+    blurb: 'Aura photography reads the body’s energy as colour. This range turns it into prints, with sculptural headwraps drawn from African, Tibetan and Celtic traditions.',
     pages: doc('portfolio', 'Aura × Versace', 37, 49), cover: 10,
   },
   {
     id: 'heritage', title: 'Heritage', kind: 'Print & embroidery study',
-    blurb: 'Buddhist heritage and Sri Lankan craft — Beeralu lace, Lakshā and embroidery motifs reimagined as contemporary prints in a Delpozo-inspired range.',
+    blurb: 'Buddhist heritage and Sri Lankan craft. Beeralu lace, Lakshā and embroidery motifs reworked as prints for a Delpozo-inspired range.',
     pages: doc('heritage', 'Heritage project'), cover: 23,
   },
   {
     id: 'choice', title: 'The Power of Choice', kind: 'Second-year final project',
-    blurb: 'Armour, structure and softness — a tailored womenswear range exploring strength, freedom and the quiet confidence of choosing for oneself.',
+    blurb: 'Armour, structure and softness. A tailored womenswear range about strength, freedom and choosing for yourself.',
     pages: doc('choice', 'The Power of Choice'), cover: 17,
   },
 ]
@@ -99,15 +99,15 @@ export const candles = [
 
 export const experience = [
   {
-    when: '2026 — Present', role: 'Founder & Consignment Partner', org: 'Mamathwaya · Self-employed',
+    when: '2026 to present', role: 'Founder & Consignment Partner', org: 'Mamathwaya · Self-employed',
     text: 'Hand-dyed Shibori free-size garments and handcrafted scented candles, supplied through a consignment partnership with Urban Island. Leading design, costing, branding, production and retail merchandising.',
   },
   {
     when: 'Industry', role: 'Textile Designer & Junior Fashion Designer', org: 'Kelly Felder',
-    text: 'Textile and print development, garment design, trend research and concept development — original textile artworks and illustrations taken through the full collection process.',
+    text: 'Textile and print development, garment design, trend research and concept development. Original textile artworks and illustrations taken through the full collection process.',
   },
   {
-    when: '2025', role: 'Talented Designer — Fashion Showcase', org: 'Mercedes-Benz Fashion Week',
+    when: '2025', role: 'Talented Designer, Fashion Showcase', org: 'Mercedes-Benz Fashion Week',
     text: 'Selected to present a collection exploring South Asian craftsmanship through Shibori, tie-dye and traditional batik.',
   },
   {
@@ -117,8 +117,8 @@ export const experience = [
 ]
 
 export const education = [
-  { when: '2025', title: 'BA (Hons) Fashion Design & Textile', where: 'Northumbria University (AOD) — Second Upper Honours' },
-  { when: '2021 — 2022', title: 'Diploma of Communication & Creative Industries', where: 'Edith Cowan University' },
+  { when: '2025', title: 'BA (Hons) Fashion Design & Textile', where: 'Northumbria University (AOD), Second Upper Honours' },
+  { when: '2021 to 2022', title: 'Diploma of Communication & Creative Industries', where: 'Edith Cowan University' },
   { when: 'School', title: 'G.C.E. Ordinary Level', where: 'Kegalle Balika Vidyalaya' },
 ]
 

@@ -35,7 +35,7 @@ float noise(vec2 p){
 }
 float fbm(vec2 p){
   float v = 0.0, a = 0.5;
-  for (int i = 0; i < 5; i++){ v += a * noise(p); p = p * 2.02 + vec2(1.7, 9.2); a *= 0.5; }
+  for (int i = 0; i < 4; i++){ v += a * noise(p); p = p * 2.02 + vec2(1.7, 9.2); a *= 0.5; }
   return v;
 }
 
@@ -96,7 +96,8 @@ export default function ShaderSky() {
     const uMouse = gl.getUniformLocation(prog, 'uMouse')
     const uScroll = gl.getUniformLocation(prog, 'uScroll')
 
-    const scale = 0.45
+    // the clouds are very soft, so a low-resolution buffer looks identical once stretched
+    const scale = window.innerWidth > 1200 ? 0.28 : 0.34
     const resize = () => {
       canvas.width = Math.max(1, Math.floor(window.innerWidth * scale))
       canvas.height = Math.max(1, Math.floor(window.innerHeight * scale))
@@ -110,9 +111,12 @@ export default function ShaderSky() {
     const move = (e) => { m.tx = e.clientX / window.innerWidth; m.ty = 1 - e.clientY / window.innerHeight }
     window.addEventListener('pointermove', move)
 
-    let raf, start = performance.now()
+    let raf, start = performance.now(), lastDraw = 0
     const draw = (now) => {
-      m.x += (m.tx - m.x) * 0.04; m.y += (m.ty - m.y) * 0.04
+      // 30 fps is plenty for slow-drifting clouds and halves the GPU work
+      if (!reduce && now - lastDraw < 33) { raf = requestAnimationFrame(draw); return }
+      lastDraw = now
+      m.x += (m.tx - m.x) * 0.08; m.y += (m.ty - m.y) * 0.08
       gl.uniform1f(uTime, (now - start) / 1000 + 20)
       gl.uniform2f(uMouse, m.x, m.y)
       gl.uniform1f(uScroll, window.scrollY / Math.max(1, document.body.scrollHeight))
