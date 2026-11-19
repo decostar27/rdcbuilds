@@ -654,11 +654,21 @@ p { color: var(--cocoa-2); margin: 0 0 18px; }
   .nav li a { padding: 12px 18px; font-size: 15px; }
   .nav-progress { border-radius: 0 0 999px 999px; }
   .hero { grid-template-columns: 1fr; padding-top: 110px; text-align: left; }
-  .hero-visual { height: 560px; }
-  .hero-card { width: min(320px, 62%); }
-  .pos-fc1 { right: -30%; top: 2%; }
-  .pos-fc2 { right: -24%; }
-  .pos-circ { left: -46px; }
+  /* hero: photo centred, cards tucked into the arch's empty corners and along the bottom edge */
+  .hero-visual { height: auto; padding: 64px 0 110px; }
+  .hero-card { width: min(300px, 56vw); }
+  .pos-circ { left: -20%; top: -9%; bottom: auto; }
+  .circular { transform: scale(.8); transform-origin: center; }
+  .pos-fc1 { top: -9%; right: -30%; }
+  .fc-1 { width: 164px; padding: 11px 14px; }
+  .fc-1 .fc-k { font-size: 9.5px; letter-spacing: .18em; white-space: nowrap; }
+  .fc-1 strong { font-size: 16px; }
+  .fc-1 > span:last-child { font-size: 11.5px; }
+  .pos-fc2 { left: -12%; right: -12%; bottom: -13%; }
+  .fc-2 { width: 100%; padding: 8px 16px 8px 8px; gap: 12px; }
+  .fc-2 img { width: 50px; height: 62px; border-radius: 10px; }
+  .fc-2 strong { font-size: 18px; }
+  .fc-2 .fc-k { font-size: 9.5px; letter-spacing: .18em; }
   .about-grid, .journey, .explorer-body, .mw-hero { grid-template-columns: 1fr; }
   .stages { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
@@ -666,19 +676,17 @@ p { color: var(--cocoa-2); margin: 0 0 18px; }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
-  .hero-visual { height: 470px; }
-  .hero-arch { width: 74%; }
-  .float-card { padding: 10px 14px; }
-  .float-card strong { font-size: 17px; }
-  .fc-1 { max-width: 180px; }
-  .hero-card { width: 58%; }
-  .fc-1 { width: 150px; padding: 10px 12px; }
-  .fc-1 strong { font-size: 15px; }
-  .pos-fc1 { right: -14%; top: -3%; }
-  .pos-fc2 { right: -20%; bottom: -8%; }
-  .pos-circ { left: -34px; bottom: 4%; }
-  .circular { transform: scale(.72); transform-origin: left bottom; }
-  .hero-scene { inset: -10% -30% -4%; }
+  .hero-visual { padding: 56px 0 100px; }
+  .hero-card { width: 58vw; }
+  .pos-fc1 { right: -24%; top: -8%; }
+  .fc-1 { width: 138px; padding: 9px 12px; }
+  .fc-1 .fc-k { font-size: 8.5px; letter-spacing: .14em; }
+  .fc-1 strong { font-size: 14px; }
+  .fc-1 > span:last-child { font-size: 10.5px; }
+  .pos-circ { left: -17%; top: -8%; }
+  .circular { transform: scale(.66); }
+  .pos-fc2 { left: -10%; right: -10%; bottom: -12%; }
+  .fc-2 strong { font-size: 16px; }
   .stats { grid-template-columns: 1fr; }
   .mw-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .mw-meta { flex-direction: column; gap: 0; font-size: 17px; }
