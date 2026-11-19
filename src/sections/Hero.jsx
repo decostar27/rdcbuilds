@@ -30,10 +30,6 @@ export default function Hero({ ready }) {
           <BlurText text="Lakshi" className="t-line" delay={0.25} start={ready} />
           <BlurText text="Milani" className="t-line t-italic" delay={0.55} start={ready} />
         </h1>
-        <motion.div className="hero-sign" variants={v} initial="hide" animate={show} custom={0.85}>
-          <span className="hs-name">Lakshi Gunasekara</span>
-          <span className="hs-role">Founder &amp; Designer</span>
-        </motion.div>
         <motion.p className="hero-lede" variants={v} initial="hide" animate={show} custom={1}>
           Clothing as a path to awareness — hand-dyed, slow-made garments that carry the calm of
           Shibori, batik and the quiet practice of mindfulness.

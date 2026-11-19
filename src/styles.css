@@ -206,13 +206,11 @@ p { color: var(--cocoa-2); margin: 0 0 18px; }
   position: relative; min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: 1.05fr 1fr; align-items: center;
   gap: 40px; padding: 120px var(--gutter) 80px; max-width: 1440px; margin: 0 auto; perspective: 1600px;
 }
-.hero-title { font-family: var(--serif); font-weight: 300; font-size: clamp(64px, 10.5vw, 168px); line-height: .88; margin: 18px 0 30px; letter-spacing: -.025em; }
+/* Header name: The Seasons (if installed/licensed) → Playfair Display (free lookalike) */
+.hero-title { font-family: 'The Seasons', 'Playfair Display', var(--serif); font-weight: 400; font-size: clamp(58px, 9.4vw, 150px); line-height: .95; margin: 18px 0 30px; letter-spacing: -.01em; }
 .t-line { display: block; }
 .hero-title .t-italic { padding-left: .5em; color: var(--accent); }
 .display .t-italic, .h2 .t-italic { color: var(--accent); }
-.hero-sign { display: inline-flex; flex-direction: column; align-items: flex-end; margin: -6px 0 26px; padding-top: 14px; border-top: 1px solid var(--line); }
-.hs-name { font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.4vw, 34px); letter-spacing: .04em; text-transform: uppercase; line-height: 1.05; color: var(--cocoa); }
-.hs-role { font-family: var(--serif); font-style: italic; font-size: clamp(15px, 1.4vw, 20px); letter-spacing: .06em; text-transform: uppercase; color: var(--olive-taupe); margin-top: 4px; }
 .hero-lede { max-width: 470px; font-size: clamp(17px, 1.4vw, 19px); }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
 .hero-spot { position: absolute; left: -10%; top: -30%; width: 120%; height: 160%; pointer-events: none; opacity: 0; animation: spot 2.4s 1s ease forwards; z-index: 0; }
