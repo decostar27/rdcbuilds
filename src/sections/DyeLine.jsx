@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from 'react'
+import { useEffect, useMemo, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Reveal, Words, Lightbox } from '../components/ui.jsx'
 import { mamathwaya } from '../data.js'
@@ -21,9 +21,58 @@ const notes = {
   MW006: 'A cropped open jacket with dramatic, angled sleeves that move as you do.',
 }
 
-/* point on the sagging line (quadratic curve) — x in %, y in px */
-const H = 140
-const sag = (t) => (1 - t) ** 2 * 18 + 2 * (1 - t) * t * 218 + t ** 2 * 18
+function useMedia(query) {
+  const get = () => typeof window !== 'undefined' && window.matchMedia(query).matches
+  const [m, setM] = useState(get)
+  useEffect(() => {
+    const mq = window.matchMedia(query)
+    const on = () => setM(mq.matches)
+    on(); mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [query])
+  return m
+}
+
+/* One sagging string with its garments. Cards sit in a flex row, so everything scales
+   with the screen; each card is pushed down to meet the curve at its centre point. */
+function Line({ items, offset, active, onPick, depth }) {
+  const top = 18
+  const h = top + depth + 14
+  const sag = (t) => top + depth * 4 * t * (1 - t)
+  return (
+    <div className="line-wrap" style={{ '--n': items.length }}>
+      <svg className="line-string" viewBox={`0 0 1000 ${h}`} preserveAspectRatio="none" style={{ height: h }} aria-hidden="true">
+        <motion.path d={`M0 ${top} Q 500 ${top + 2 * depth} 1000 ${top}`} fill="none"
+          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }}
+          transition={{ duration: 2, ease: 'easeInOut' }} />
+      </svg>
+      <span className="line-knot l" aria-hidden="true" />
+      <span className="line-knot r" aria-hidden="true" />
+      {items.map((p, j) => {
+        const i = offset + j
+        const t = (j + 0.5) / items.length
+        const on = i === active
+        return (
+          <motion.div key={p.code} className="peg-slot" style={{ paddingTop: sag(t) - 12 }}
+            initial={{ opacity: 0, y: -40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.5 + j * 0.12, ease }}>
+            <motion.button className={`peg-card ${on ? 'on' : ''}`} onClick={() => onPick(i)}
+              aria-pressed={on} aria-label={`${p.code} ${p.name}`}
+              animate={{ rotate: [-2.2 + j * 0.3, 2.4 - j * 0.2, -2.2 + j * 0.3] }}
+              transition={{ duration: 5.5 + j * 0.7, repeat: Infinity, ease: 'easeInOut' }}
+              whileHover={{ y: 8 }}>
+              <span className="peg" aria-hidden="true" />
+              <span className="peg-photo">
+                <img src={p.ways[0].src} alt="" loading="lazy" width="440" height="550" />
+              </span>
+              <span className="peg-tag">{p.code}</span>
+            </motion.button>
+          </motion.div>
+        )
+      })}
+    </div>
+  )
+}
 
 export default function DyeLine() {
   const pieces = useMemo(() => {
@@ -35,14 +84,24 @@ export default function DyeLine() {
     return [...map.values()]
   }, [])
 
+  const phone = useMedia('(max-width: 700px)')
   const [active, setActive] = useState(0)
   const [way, setWay] = useState(0)
+  const [dir, setDir] = useState(1)
   const [lb, setLb] = useState(null)
   const close = useCallback(() => setLb(null), [])
   const piece = pieces[active]
   const cur = piece.ways[way] || piece.ways[0]
-  const pick = (i) => { setActive(i); setWay(0) }
   const lbItems = piece.ways.map((w) => ({ src: w.src, alt: `${piece.name} in ${w.tone}` }))
+
+  const pick = (i) => {
+    setActive(i); setWay(0)
+    // on phones, bring the details into view after choosing from the line
+    if (phone) setTimeout(() => document.getElementById('dye-room')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150)
+  }
+  const step = (d) => { setDir(d); setWay((w) => (w + d + piece.ways.length) % piece.ways.length) }
+
+  const rows = phone ? [pieces.slice(0, 3), pieces.slice(3)] : [pieces]
 
   return (
     <div className="dye">
@@ -52,40 +111,13 @@ export default function DyeLine() {
         <Reveal><p>Six free-size pieces, folded, bound and dyed by hand — left to dry in the sun. Choose one from the line.</p></Reveal>
       </div>
 
-      {/* the drying line */}
-      <div className="line-scroll" data-lenis-prevent-wheel>
-        <div className="line-wrap">
-          <svg className="line-string" viewBox={`0 0 1000 ${H}`} preserveAspectRatio="none" aria-hidden="true">
-            <motion.path d="M0 18 Q 500 218 1000 18" fill="none"
-              initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }}
-              transition={{ duration: 2, ease: 'easeInOut' }} />
-          </svg>
-          {pieces.map((p, i) => {
-            const t = (i + 0.5) / pieces.length
-            const on = i === active
-            return (
-              <motion.div key={p.code} className="peg-slot" style={{ left: `${t * 100}%`, top: sag(t) }}
-                initial={{ opacity: 0, y: -40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 1.2, delay: 0.6 + i * 0.12, ease }}>
-                <motion.button className={`peg-card ${on ? 'on' : ''}`} onClick={() => pick(i)}
-                  aria-pressed={on} aria-label={`${p.code} ${p.name}`}
-                  animate={{ rotate: [-2.2 + i * 0.3, 2.4 - i * 0.2, -2.2 + i * 0.3] }}
-                  transition={{ duration: 5.5 + i * 0.7, repeat: Infinity, ease: 'easeInOut' }}
-                  whileHover={{ y: 8 }}>
-                  <span className="peg" aria-hidden="true" />
-                  <span className="peg-photo">
-                    <img src={p.ways[0].src} alt="" loading="lazy" />
-                  </span>
-                  <span className="peg-tag">{p.code}</span>
-                </motion.button>
-              </motion.div>
-            )
-          })}
-        </div>
+      <div className="line-area">
+        {rows.map((r, k) => (
+          <Line key={k} items={r} offset={k * 3} active={active} onPick={pick} depth={phone ? 46 : 96} />
+        ))}
       </div>
 
-      {/* the dye room */}
-      <div className="dye-room">
+      <div className="dye-room" id="dye-room">
         <div className="dye-stage">
           <motion.span className="dye-bleed" aria-hidden="true"
             animate={{ background: `radial-gradient(circle at 40% 40%, ${dye[cur.tone].a}, ${dye[cur.tone].b} 60%, transparent 75%)` }}
@@ -93,13 +125,21 @@ export default function DyeLine() {
           <div className="dye-frame">
             <AnimatePresence initial={false}>
               <motion.button key={cur.src} className="dye-photo" onClick={() => setLb(way)}
-                initial={{ clipPath: 'circle(0% at 82% 88%)' }} animate={{ clipPath: 'circle(150% at 82% 88%)' }}
+                initial={{ clipPath: `circle(0% at ${dir > 0 ? 82 : 18}% 88%)` }}
+                animate={{ clipPath: `circle(150% at ${dir > 0 ? 82 : 18}% 88%)` }}
                 exit={{ opacity: 0, transition: { duration: 0.6, delay: 0.5 } }}
-                transition={{ duration: 1.3, ease }} aria-label="View full screen">
-                <img src={cur.src} alt={`${piece.name} in ${cur.tone}`} />
+                transition={{ duration: 1.3, ease }} aria-label="View full screen"
+                drag={piece.ways.length > 1 ? 'x' : false} dragConstraints={{ left: 0, right: 0 }} dragElastic={0.25}
+                onDragEnd={(_, info) => { if (Math.abs(info.offset.x) > 50) step(info.offset.x < 0 ? 1 : -1) }}>
+                <img src={cur.src} alt={`${piece.name} in ${cur.tone}`} draggable="false" />
               </motion.button>
             </AnimatePresence>
+            {piece.ways.length > 1 && <>
+              <button className="dye-arrow prev" onClick={() => step(-1)} aria-label="Previous colourway">←</button>
+              <button className="dye-arrow next" onClick={() => step(1)} aria-label="Next colourway">→</button>
+            </>}
           </div>
+          {piece.ways.length > 1 && <span className="dye-hint">Swipe or tap the arrows to change colourway</span>}
         </div>
 
         <div className="dye-info">
@@ -118,7 +158,7 @@ export default function DyeLine() {
             <div className="drops" role="radiogroup" aria-label="Colourway">
               {piece.ways.map((w, i) => (
                 <button key={w.tone} role="radio" aria-checked={i === way} className={`drop ${i === way ? 'on' : ''}`}
-                  onClick={() => setWay(i)}>
+                  onClick={() => { setDir(i >= way ? 1 : -1); setWay(i) }}>
                   <motion.span className="drop-ink" style={{ background: `radial-gradient(circle at 35% 30%, ${dye[w.tone].a}, ${dye[w.tone].b})` }}
                     whileHover={{ scale: 1.12, rotate: -8 }} whileTap={{ scale: 0.92 }} />
                   <span className="drop-label">{dye[w.tone].label}</span>
@@ -133,6 +173,13 @@ export default function DyeLine() {
             <li><span>Technique</span>Shibori fold &amp; bind</li>
           </ul>
           <p className="dye-unique">✺ Every piece is folded and dyed by hand, so no two are ever exactly alike.</p>
+
+          {phone && (
+            <div className="dye-pager">
+              <button onClick={() => pick((active - 1 + pieces.length) % pieces.length)}>← {pieces[(active - 1 + pieces.length) % pieces.length].code}</button>
+              <button onClick={() => pick((active + 1) % pieces.length)}>{pieces[(active + 1) % pieces.length].code} →</button>
+            </div>
+          )}
         </div>
       </div>
       <Lightbox items={lbItems} index={lb} onClose={close} onIndex={setLb} />
