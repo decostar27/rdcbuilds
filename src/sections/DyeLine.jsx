@@ -41,11 +41,11 @@ function Line({ items, offset, active, onPick, depth }) {
   const sag = (t) => top + depth * 4 * t * (1 - t)
   return (
     <div className="line-wrap" style={{ '--n': items.length }}>
-      <svg className="line-string" viewBox={`0 0 1000 ${h}`} preserveAspectRatio="none" style={{ height: h }} aria-hidden="true">
-        <motion.path d={`M0 ${top} Q 500 ${top + 2 * depth} 1000 ${top}`} fill="none"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }}
-          transition={{ duration: 2, ease: 'easeInOut' }} />
-      </svg>
+      <motion.svg className="line-string" viewBox={`0 0 1000 ${h}`} preserveAspectRatio="none" style={{ height: h }} aria-hidden="true"
+        initial={{ clipPath: 'inset(0 100% 0 0)' }} whileInView={{ clipPath: 'inset(0 0% 0 0)' }} viewport={{ once: true }}
+        transition={{ duration: 1.8, ease: 'easeInOut' }}>
+        <path d={`M0 ${top} Q 500 ${top + 2 * depth} 1000 ${top}`} fill="none" />
+      </motion.svg>
       <span className="line-knot l" aria-hidden="true" />
       <span className="line-knot r" aria-hidden="true" />
       {items.map((p, j) => {
@@ -53,7 +53,7 @@ function Line({ items, offset, active, onPick, depth }) {
         const t = (j + 0.5) / items.length
         const on = i === active
         return (
-          <motion.div key={p.code} className="peg-slot" style={{ paddingTop: sag(t) - 12 }}
+          <motion.div key={p.code} className="peg-slot" style={{ paddingTop: sag(t) - 17 }}
             initial={{ opacity: 0, y: -40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.5 + j * 0.12, ease }}>
             <motion.button className={`peg-card ${on ? 'on' : ''}`} onClick={() => onPick(i)}
@@ -182,7 +182,7 @@ export default function DyeLine() {
           )}
         </div>
       </div>
-      <Lightbox items={lbItems} index={lb} onClose={close} onIndex={setLb} />
+      <Lightbox items={lbItems} index={lb} onClose={close} onIndex={setLb} title={`${piece.code} · ${piece.name}`} />
     </div>
   )
 }

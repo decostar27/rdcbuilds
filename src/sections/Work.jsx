@@ -68,7 +68,7 @@ function LookExplorer() {
           </div>
         </div>
       </div>
-      <Lightbox items={look.images} index={lb} onClose={close} onIndex={setLb} />
+      <Lightbox items={look.images} index={lb} onClose={close} onIndex={setLb} title={`Thama Nibbana · Look ${look.n} — ${look.title}`} />
     </div>
   )
 }
@@ -131,7 +131,7 @@ function Runway() {
           </div>
         </div>
       </div>
-      <Lightbox items={runway} index={lb} onClose={close} onIndex={setLb} />
+      <Lightbox items={runway} index={lb} onClose={close} onIndex={setLb} title="On the runway · MBFW 2025" />
     </div>
   )
 }
@@ -170,7 +170,7 @@ function Projects() {
           </Reveal>
         ))}
       </div>
-      <Lightbox items={p ? p.pages : []} index={p ? lb : null} onClose={() => { close(); setOpen(null) }} onIndex={setLb} />
+      <Lightbox items={p ? p.pages : []} index={p ? lb : null} onClose={() => { close(); setOpen(null) }} onIndex={setLb} title={p ? `${p.title} · Portfolio pages` : ''} />
     </div>
   )
 }
@@ -230,7 +230,7 @@ export default function Work() {
             </Reveal>
           ))}
         </div>
-        <Lightbox items={nibbanaPages} index={lb} onClose={close} onIndex={setLb} />
+        <Lightbox items={nibbanaPages} index={lb} onClose={close} onIndex={setLb} title="Thama Nibbana · Portfolio pages" />
       </div>
 
       <Runway />
