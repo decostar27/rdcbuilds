@@ -38,8 +38,8 @@ export default function Hero({ ready }) {
         <Card3D className="hero-card" max={7}>
           <Layer z={0} className="hero-arch-wrap">
             <motion.div className="hero-arch" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-              <motion.img src={img('looks/look5-12.webp')} width="933" height="1400" fetchpriority="high" decoding="async"
-                alt="A model twirls in a hand-dyed saffron gown from the Thama Nibbana collection"
+              <motion.img src={img('hero.webp')} width="933" height="1400" fetchpriority="high" decoding="async"
+                alt="A model in a hand-dyed saffron cape and lotus-print skirt from the Thama Nibbana collection, in a room of antique wooden furniture"
                 initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.6, ease }} />
             </motion.div>
           </Layer>
