@@ -149,7 +149,7 @@ function Projects() {
       </div>
       <div className="project-grid">
         {projects.map((pr, i) => (
-          <Reveal key={pr.id} delay={i * 0.1} className={pr.featured ? 'pc-featured' : ''}>
+          <Reveal key={pr.id} delay={i * 0.1} className={`${pr.featured ? 'pc-featured' : ''} ${pr.flip ? 'pc-flip' : ''}`}>
             <TiltedCard className="project-tilt" max={6} scale={1.015}>
               <motion.button className="project-card" onClick={() => { setOpen(pr.id); setLb(0) }} whileHover="hover">
                 <div className="pc-img">

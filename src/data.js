@@ -46,6 +46,11 @@ export const projects = [
     pages: doc('lookbook', 'Thama Nibbana Look Book'), cover: 35,
   },
   {
+    id: 'nibbana-portfolio', title: 'Thama Nibbana — Portfolio', kind: 'Final collection · Design development', featured: true, flip: true,
+    blurb: 'Behind the collection — concept and colour boards, doodled print development, hand-dyed fabric experiments, the six look illustrations and the final line-up.',
+    pages: doc('portfolio', 'Thama Nibbana Portfolio', 0, 25), cover: 24,
+  },
+  {
     id: 'samsara', title: 'Samsara', kind: 'Follow-on project · Menswear',
     blurb: 'The journey from birth to Nirvana — biomorphic prints, chakra colour and layered gauze over DTF, told through menswear silhouettes.',
     pages: doc('portfolio', 'Samsara', 25, 37), cover: 10,
