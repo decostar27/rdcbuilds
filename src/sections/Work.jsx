@@ -96,7 +96,6 @@ function Runway() {
 
           <div className="runway-head">
             <div>
-              <span className="runway-badge"><i />Mercedes-Benz Fashion Week · 2025</span>
               <h3 className="h2"><Words text="On the runway" /></h3>
               <p>A collection exploring South Asian craftsmanship — Shibori, tie-dye and traditional batik — selected for the Talented Designer showcase.</p>
             </div>
