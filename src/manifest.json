@@ -1,0 +1,584 @@
+{
+ "looks": {
+  "1": [
+   {
+    "src": "looks/look1-01.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-02.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-03.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-04.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-05.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-06.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-07.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-08.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look1-09.webp",
+    "w": 933,
+    "h": 1400
+   }
+  ],
+  "2": [
+   {
+    "src": "looks/look2-01.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look2-02.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look2-03.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look2-04.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look2-05.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look2-06.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look2-07.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look2-08.webp",
+    "w": 933,
+    "h": 1400
+   }
+  ],
+  "3": [
+   {
+    "src": "looks/look3-01.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-02.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-03.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-04.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-05.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-06.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-07.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-08.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-09.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-10.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-11.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-12.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look3-13.webp",
+    "w": 933,
+    "h": 1400
+   }
+  ],
+  "4": [
+   {
+    "src": "looks/look4-01.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-02.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-03.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-04.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-05.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-06.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-07.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-08.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-09.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-10.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-11.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look4-12.webp",
+    "w": 933,
+    "h": 1400
+   }
+  ],
+  "5": [
+   {
+    "src": "looks/look5-01.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-02.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-03.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-04.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-05.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-06.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-07.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-08.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-09.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-10.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-11.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-12.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look5-13.webp",
+    "w": 933,
+    "h": 1400
+   }
+  ],
+  "6": [
+   {
+    "src": "looks/look6-01.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-02.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-03.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-04.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-05.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-06.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-07.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-08.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-09.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-10.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-11.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-12.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-13.webp",
+    "w": 933,
+    "h": 1400
+   },
+   {
+    "src": "looks/look6-14.webp",
+    "w": 933,
+    "h": 1400
+   }
+  ]
+ },
+ "runway": [
+  {
+   "src": "runway/mbfw-01.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-02.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-03.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-04.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-05.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-06.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-07.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-08.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-09.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-10.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-11.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-12.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-13.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-14.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-15.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-16.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-17.webp",
+   "w": 800,
+   "h": 1200
+  },
+  {
+   "src": "runway/mbfw-18.webp",
+   "w": 800,
+   "h": 1200
+  }
+ ],
+ "brand": {
+  "card-front": "brand/card-front.webp",
+  "card-back": "brand/card-back.webp",
+  "cover": "brand/cover.webp",
+  "mark": "brand/mark.webp",
+  "blue": "brand/c01/blue.webp",
+  "light-blue": "brand/c01/light-blue.webp",
+  "mw001c1": "brand/c01/mw001c1.webp",
+  "mw001c2": "brand/c01/mw001c2.webp",
+  "mw002c1": "brand/c01/mw002c1.webp",
+  "mw002c2": "brand/c01/mw002c2.webp",
+  "mw003c1": "brand/c01/mw003c1.webp",
+  "mw003c2": "brand/c01/mw003c2.webp",
+  "mw003c3": "brand/c01/mw003c3.webp",
+  "mw004c1": "brand/c01/mw004c1.webp",
+  "mw004c2": "brand/c01/mw004c2.webp",
+  "mw004c3": "brand/c01/mw004c3.webp",
+  "mw005c1": "brand/c01/mw005c1.webp",
+  "mw005c2": "brand/c01/mw005c2.webp",
+  "mw005c3": "brand/c01/mw005c3.webp",
+  "mw006c1": "brand/c01/mw006c1.webp",
+  "mw006c2": "brand/c01/mw006c2.webp",
+  "mw006c3": "brand/c01/mw006c3.webp",
+  "orange": "brand/c01/orange.webp",
+  "purple": "brand/c01/purple.webp",
+  "red": "brand/c01/red.webp",
+  "yellow": "brand/c01/yellow.webp"
+ },
+ "pages": {
+  "nibbana": [
+   {
+    "src": "pages/nibbana-07.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/nibbana-09.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/nibbana-10.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/nibbana-24.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/nibbana-25.webp",
+    "w": 1072,
+    "h": 758
+   }
+  ],
+  "samsara": [
+   {
+    "src": "pages/samsara-28.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/samsara-30.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/samsara-31.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/samsara-36.webp",
+    "w": 1072,
+    "h": 758
+   }
+  ],
+  "versace": [
+   {
+    "src": "pages/versace-40.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/versace-42.webp",
+    "w": 1072,
+    "h": 758
+   },
+   {
+    "src": "pages/versace-48.webp",
+    "w": 1072,
+    "h": 758
+   }
+  ],
+  "heritage": [
+   {
+    "src": "pages/heritage-01.webp",
+    "w": 1191,
+    "h": 842
+   },
+   {
+    "src": "pages/heritage-08.webp",
+    "w": 1191,
+    "h": 842
+   },
+   {
+    "src": "pages/heritage-24.webp",
+    "w": 1191,
+    "h": 842
+   }
+  ],
+  "choice": [
+   {
+    "src": "pages/choice-02.webp",
+    "w": 1191,
+    "h": 842
+   },
+   {
+    "src": "pages/choice-18.webp",
+    "w": 1191,
+    "h": 842
+   },
+   {
+    "src": "pages/choice-19.webp",
+    "w": 1191,
+    "h": 842
+   }
+  ]
+ },
+ "portrait": "lakshi-portrait.webp"
+}
