@@ -41,12 +41,7 @@ const doc = (k, title, from = 0, to) =>
 
 export const projects = [
   {
-    id: 'lookbook', title: 'Thama Nibbana — Look Book', kind: 'Final collection · Look book', featured: true,
-    blurb: 'The graduate collection photographed — six looks of hand-dyed calico, from the restless mind to release, across a 36-page look book.',
-    pages: doc('lookbook', 'Thama Nibbana Look Book'), cover: 35,
-  },
-  {
-    id: 'nibbana-portfolio', title: 'Thama Nibbana — Portfolio', kind: 'Final collection · Design development', featured: true, flip: true,
+    id: 'nibbana-portfolio', title: 'Thama Nibbana — Portfolio', kind: 'Final collection · Design development', featured: true,
     blurb: 'Behind the collection — concept and colour boards, doodled print development, hand-dyed fabric experiments, the six look illustrations and the final line-up.',
     pages: doc('portfolio', 'Thama Nibbana Portfolio', 0, 25), cover: 24,
   },

@@ -168,7 +168,7 @@ function Projects() {
           </Reveal>
         ))}
       </div>
-      <Lightbox items={p ? p.pages : []} index={p ? lb : null} onClose={() => { close(); setOpen(null) }} onIndex={setLb} title={p ? p.title : ''} book={p?.id === 'lookbook'} />
+      <Lightbox items={p ? p.pages : []} index={p ? lb : null} onClose={() => { close(); setOpen(null) }} onIndex={setLb} title={p ? p.title : ''} />
     </div>
   )
 }
