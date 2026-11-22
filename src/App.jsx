@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
-import { motion, MotionConfig, useScroll, useSpring } from 'framer-motion'
+import { motion, MotionConfig, AnimatePresence, useScroll, useSpring, useMotionValueEvent } from 'framer-motion'
 import Lenis from 'lenis'
 import { Grain, Intro, introSeen } from './components/Ambient.jsx'
 import ShaderSky from './components/ShaderSky.jsx'
@@ -50,6 +50,23 @@ function Nav() {
   )
 }
 
+/* Small round button that appears once you are past the header */
+function ToTop() {
+  const { scrollY } = useScroll()
+  const [show, setShow] = useState(false)
+  useMotionValueEvent(scrollY, 'change', (v) => setShow(v > window.innerHeight * 1.2))
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.a href="#home" className="to-top" aria-label="Back to top"
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }} transition={{ duration: 0.25 }}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6" /></svg>
+        </motion.a>
+      )}
+    </AnimatePresence>
+  )
+}
+
 export default function App() {
   const [ready, setReady] = useState(introSeen)
   const done = useCallback(() => setReady(true), [])
@@ -77,6 +94,7 @@ export default function App() {
       <Grain />
       <Intro done={ready} onDone={done} />
       <Nav />
+      <ToTop />
       <main>
         <Hero ready={ready} />
         <Marquee />

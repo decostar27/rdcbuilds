@@ -58,12 +58,10 @@ function Line({ items, offset, active, onPick, depth }) {
             transition={{ duration: 1.2, delay: 0.5 + j * 0.12, ease }}>
             <motion.button className={`peg-card ${on ? 'on' : ''}`} onClick={() => onPick(i)}
               aria-pressed={on} aria-label={`${p.code} ${p.name}`}
-              animate={{ rotate: [-2.2 + j * 0.3, 2.4 - j * 0.2, -2.2 + j * 0.3] }}
-              transition={{ duration: 5.5 + j * 0.7, repeat: Infinity, ease: 'easeInOut' }}
-              whileHover={{ y: 8 }}>
+              style={{ '--sway-d': `${5.5 + j * 0.7}s`, '--sway-a': `${2.2 - j * 0.2}deg` }}>
               <span className="peg" aria-hidden="true" />
               <span className="peg-photo">
-                <img src={p.ways[0].src} alt="" loading="lazy" width="440" height="550" />
+                <img src={p.ways[0].thumb} alt="" loading="lazy" decoding="async" width="384" height="480" />
               </span>
               <span className="peg-tag">{p.code}</span>
             </motion.button>
@@ -79,7 +77,7 @@ export default function DyeLine() {
     const map = new Map()
     mamathwaya.forEach((m) => {
       if (!map.has(m.code)) map.set(m.code, { code: m.code, name: m.name, ways: [] })
-      map.get(m.code).ways.push({ tone: m.tone, src: m.src })
+      map.get(m.code).ways.push({ tone: m.tone, src: m.src, thumb: m.thumb })
     })
     return [...map.values()]
   }, [])
@@ -92,6 +90,8 @@ export default function DyeLine() {
   const close = useCallback(() => setLb(null), [])
   const piece = pieces[active]
   const cur = piece.ways[way] || piece.ways[0]
+  // decode every colourway of the chosen piece in advance so switching is instant
+  useEffect(() => { piece.ways.forEach((w) => { const im = new Image(); im.src = w.src }) }, [piece])
   const lbItems = piece.ways.map((w) => ({ src: w.src, alt: `${piece.name} in ${w.tone}` }))
 
   const pick = (i) => {
@@ -131,7 +131,7 @@ export default function DyeLine() {
                 transition={{ duration: 1.3, ease }} aria-label="View full screen"
                 drag={piece.ways.length > 1 ? 'x' : false} dragConstraints={{ left: 0, right: 0 }} dragElastic={0.25}
                 onDragEnd={(_, info) => { if (Math.abs(info.offset.x) > 50) step(info.offset.x < 0 ? 1 : -1) }}>
-                <img src={cur.src} alt={`${piece.name} in ${cur.tone}`} draggable="false" />
+                <img src={cur.src} alt={`${piece.name} in ${cur.tone}`} draggable="false" decoding="async" />
               </motion.button>
             </AnimatePresence>
             {piece.ways.length > 1 && <>

@@ -28,11 +28,13 @@ export const looks = [
     n: 'VI', key: '6', title: 'Release', stage: 'Nibbana',
     text: 'Box-pleated wide-leg pants gathered at the side, an asymmetric layered tunic, and a one-sided cape tied around the neck. Fluid, unbound, at peace.',
   },
-].map((l) => ({ ...l, images: manifest.looks[l.key].map((i) => ({ ...i, src: img(i.src) })) }))
+].map((l) => ({ ...l, images: manifest.looks[l.key].map((i) => ({ ...i, src: img(i.src), thumb: img(i.thumb) })) }))
 
-export const runway = manifest.runway.map((i) => ({ ...i, src: img(i.src) }))
+export const runway = manifest.runway.map((i) => ({ ...i, src: img(i.src), thumb: img(i.thumb) }))
 export const portrait = img(manifest.portrait)
 export const brand = Object.fromEntries(Object.entries(manifest.brand).map(([k, v]) => [k, img(v)]))
+/* small versions of the Mamathwaya photos, for the drying line and candle row */
+export const brandThumb = Object.fromEntries(Object.entries(manifest.brandThumbs).map(([k, v]) => [k, img(v)]))
 /* Full documents — every page of each PDF, with a small thumbnail per page */
 const doc = (k, title, from = 0, to) =>
   manifest.docs[k].slice(from, to).map((p, i) => ({
@@ -70,32 +72,33 @@ export const projects = [
 
 
 const C = brand
+const T = brandThumb
 export const mamathwaya = [
-  { code: 'MW001', name: 'Wrap Jacket', tone: 'Ocean', src: C.mw001c1 },
-  { code: 'MW001', name: 'Wrap Jacket', tone: 'Blush', src: C.mw001c2 },
-  { code: 'MW002', name: 'Tie Dress', tone: 'Saffron', src: C.mw002c1 },
-  { code: 'MW002', name: 'Tie Dress', tone: 'Blush', src: C.mw002c2 },
-  { code: 'MW003', name: 'Free Shorts', tone: 'Ocean', src: C.mw003c1 },
-  { code: 'MW003', name: 'Free Shorts', tone: 'Saffron', src: C.mw003c2 },
-  { code: 'MW003', name: 'Free Shorts', tone: 'Blush', src: C.mw003c3 },
-  { code: 'MW004', name: 'Tie Trousers', tone: 'Ocean', src: C.mw004c1 },
-  { code: 'MW004', name: 'Tie Trousers', tone: 'Saffron', src: C.mw004c2 },
-  { code: 'MW004', name: 'Tie Trousers', tone: 'Blush', src: C.mw004c3 },
-  { code: 'MW005', name: 'Bow Blouse', tone: 'Ocean', src: C.mw005c1 },
-  { code: 'MW005', name: 'Bow Blouse', tone: 'Saffron', src: C.mw005c2 },
-  { code: 'MW005', name: 'Bow Blouse', tone: 'Blush', src: C.mw005c3 },
-  { code: 'MW006', name: 'Open Jacket', tone: 'Ocean', src: C.mw006c1 },
-  { code: 'MW006', name: 'Open Jacket', tone: 'Saffron', src: C.mw006c2 },
-  { code: 'MW006', name: 'Open Jacket', tone: 'Blush', src: C.mw006c3 },
+  { code: 'MW001', name: 'Wrap Jacket', tone: 'Ocean', src: C.mw001c1, thumb: T.mw001c1 },
+  { code: 'MW001', name: 'Wrap Jacket', tone: 'Blush', src: C.mw001c2, thumb: T.mw001c2 },
+  { code: 'MW002', name: 'Tie Dress', tone: 'Saffron', src: C.mw002c1, thumb: T.mw002c1 },
+  { code: 'MW002', name: 'Tie Dress', tone: 'Blush', src: C.mw002c2, thumb: T.mw002c2 },
+  { code: 'MW003', name: 'Free Shorts', tone: 'Ocean', src: C.mw003c1, thumb: T.mw003c1 },
+  { code: 'MW003', name: 'Free Shorts', tone: 'Saffron', src: C.mw003c2, thumb: T.mw003c2 },
+  { code: 'MW003', name: 'Free Shorts', tone: 'Blush', src: C.mw003c3, thumb: T.mw003c3 },
+  { code: 'MW004', name: 'Tie Trousers', tone: 'Ocean', src: C.mw004c1, thumb: T.mw004c1 },
+  { code: 'MW004', name: 'Tie Trousers', tone: 'Saffron', src: C.mw004c2, thumb: T.mw004c2 },
+  { code: 'MW004', name: 'Tie Trousers', tone: 'Blush', src: C.mw004c3, thumb: T.mw004c3 },
+  { code: 'MW005', name: 'Bow Blouse', tone: 'Ocean', src: C.mw005c1, thumb: T.mw005c1 },
+  { code: 'MW005', name: 'Bow Blouse', tone: 'Saffron', src: C.mw005c2, thumb: T.mw005c2 },
+  { code: 'MW005', name: 'Bow Blouse', tone: 'Blush', src: C.mw005c3, thumb: T.mw005c3 },
+  { code: 'MW006', name: 'Open Jacket', tone: 'Ocean', src: C.mw006c1, thumb: T.mw006c1 },
+  { code: 'MW006', name: 'Open Jacket', tone: 'Saffron', src: C.mw006c2, thumb: T.mw006c2 },
+  { code: 'MW006', name: 'Open Jacket', tone: 'Blush', src: C.mw006c3, thumb: T.mw006c3 },
 ]
 
 export const candles = [
-  { name: 'Lotus Blue', src: C.blue, hue: '#8fb1d9' },
-  { name: 'Morning Mist', src: C['light-blue'], hue: '#9fd6d3' },
-  { name: 'Marigold', src: C.yellow, hue: '#e9c45b' },
-  { name: 'Temple Saffron', src: C.orange, hue: '#ec9a6e' },
-  { name: 'Hibiscus', src: C.red, hue: '#e0647a' },
-  { name: 'Lavender Dusk', src: C.purple, hue: '#b79ad6' },
+  { name: 'Lotus Blue', src: C.blue, thumb: T.blue, hue: '#8fb1d9' },
+  { name: 'Morning Mist', src: C['light-blue'], thumb: T['light-blue'], hue: '#9fd6d3' },
+  { name: 'Marigold', src: C.yellow, thumb: T.yellow, hue: '#e9c45b' },
+  { name: 'Temple Saffron', src: C.orange, thumb: T.orange, hue: '#ec9a6e' },
+  { name: 'Hibiscus', src: C.red, thumb: T.red, hue: '#e0647a' },
+  { name: 'Lavender Dusk', src: C.purple, thumb: T.purple, hue: '#b79ad6' },
 ]
 
 export const experience = [

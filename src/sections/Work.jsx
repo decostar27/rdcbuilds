@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from 'react'
+import { useRef, useState, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import { Reveal, Words, Label, Lightbox } from '../components/ui.jsx'
 import { Mandala } from '../components/Ambient.jsx'
@@ -14,43 +14,77 @@ const stages = [
   { k: 'Panna', t: 'Wisdom', d: 'Colours blended and faded until the boundaries dissolve into light.', c: 'radial-gradient(circle at 35% 30%, #DDB4B9, #A8737C)', Icon: PannaIcon },
 ]
 
+/* load + decode an image off-screen, so swapping it in never blinks or stutters */
+const ready = new Map()
+function preload(src) {
+  if (!ready.has(src)) {
+    const im = new Image()
+    im.src = src
+    ready.set(src, (im.decode ? im.decode() : Promise.resolve()).catch(() => {}))
+  }
+  return ready.get(src)
+}
+
 function LookExplorer() {
   const [active, setActive] = useState(0)
   const [shot, setShot] = useState(0)
+  const [shown, setShown] = useState(looks[0].images[0].src)
   const [lb, setLb] = useState(null)
   const look = looks[active]
-  const pick = (i) => { setActive(i); setShot(0) }
+  const n = look.images.length
   const close = useCallback(() => setLb(null), [])
+
+  // swap the big photo only once the next one is decoded; warm up its neighbours
+  useEffect(() => {
+    let live = true
+    const src = look.images[shot].src
+    preload(src).then(() => { if (live) setShown(src) })
+    ;[1, -1].forEach((d) => preload(look.images[(shot + d + n) % n].src))
+    return () => { live = false }
+  }, [look, shot, n])
+
+  const pick = (i) => { setActive(i); setShot(0) }
+  const step = (d) => setShot((s) => (s + d + n) % n)
+  const warm = (i) => preload(looks[i].images[0].src)
 
   return (
     <div className="explorer">
       <div className="explorer-tabs" role="tablist" aria-label="Looks">
         {looks.map((l, i) => (
-          <button key={l.n} role="tab" aria-selected={i === active} className={i === active ? 'on' : ''} onClick={() => pick(i)}>
-            {i === active && <motion.span layoutId="tab-pill" className="tab-pill" transition={{ type: 'spring', stiffness: 220, damping: 26 }} />}
+          <button key={l.n} role="tab" aria-selected={i === active} className={i === active ? 'on' : ''}
+            onClick={() => pick(i)} onPointerEnter={() => warm(i)} onFocus={() => warm(i)}>
+            {i === active && <motion.span layoutId="tab-pill" className="tab-pill" transition={{ type: 'spring', stiffness: 300, damping: 32 }} />}
             <span>Look {l.n}</span>
           </button>
         ))}
       </div>
 
       <div className="explorer-body">
-        <TiltedCard className="stage-tilt" max={7} scale={1.02}>
-        <div className="explorer-stage">
-          <AnimatePresence mode="wait">
-            <motion.button key={look.images[shot].src} className="explorer-main" onClick={() => setLb(shot)}
-              initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.8, ease }}
-              aria-label="Open image full screen">
-              <img src={look.images[shot].src} alt={`Look ${look.n} — ${look.title}`} />
+        <div className="explorer-stage" tabIndex={0} aria-label={`Look ${look.n} photo ${shot + 1} of ${n}. Use left and right arrow keys to browse.`}
+          onKeyDown={(e) => { if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1); if (e.key === 'Enter') setLb(shot) }}>
+          <AnimatePresence initial={false}>
+            <motion.button key={shown} className="explorer-main" onClick={() => setLb(shot)}
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.35, delay: 0.25 } }}
+              transition={{ duration: 0.45, ease: 'easeOut' }}
+              drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.2} dragSnapToOrigin
+              onDragEnd={(_, info) => { if (Math.abs(info.offset.x) > 50) step(info.offset.x < 0 ? 1 : -1) }}
+              aria-label="Open photo full screen" tabIndex={-1}>
+              <img src={shown} alt={`Look ${look.n}, ${look.title}`} width="933" height="1400" draggable="false" />
             </motion.button>
           </AnimatePresence>
+          <button className="ex-arrow prev" onClick={() => step(-1)} aria-label="Previous photo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+          </button>
+          <button className="ex-arrow next" onClick={() => step(1)} aria-label="Next photo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+          </button>
+          <span className="ex-count">{String(shot + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</span>
         </div>
-        </TiltedCard>
 
         <div className="explorer-info">
-          <AnimatePresence mode="wait">
-            <motion.div key={look.n} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.7, ease }}>
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div key={look.n} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, ease }}>
               <span className="look-num">{look.n}</span>
               <span className="fc-k">{look.stage}</span>
               <h3 className="h3">{look.title}</h3>
@@ -59,16 +93,15 @@ function LookExplorer() {
           </AnimatePresence>
           <div className="thumbs">
             {look.images.map((im, i) => (
-              <motion.button key={im.src} className={`thumb ${i === shot ? 'on' : ''}`} onClick={() => setShot(i)}
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}
-                aria-label={`Show image ${i + 1}`}>
-                <img src={im.src} alt="" loading="lazy" />
-              </motion.button>
+              <button key={im.src} className={`thumb ${i === shot ? 'on' : ''}`} onClick={() => setShot(i)}
+                onPointerEnter={() => preload(im.src)} aria-label={`Show photo ${i + 1}`} aria-current={i === shot}>
+                <img src={im.thumb} alt="" loading="lazy" decoding="async" width="320" height="480" />
+              </button>
             ))}
           </div>
         </div>
       </div>
-      <Lightbox items={look.images} index={lb} onClose={close} onIndex={setLb} title={`Thama Nibbana · Look ${look.n}, ${look.title}`} />
+      <Lightbox items={look.images} index={lb} onClose={close} onIndex={(i) => { setLb(i); setShot(i) }} title={`Thama Nibbana · Look ${look.n}, ${look.title}`} />
     </div>
   )
 }
@@ -115,7 +148,7 @@ function Runway() {
                   whileHover={{ y: -14, scale: 1.03 }} transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                   aria-label={`Open runway photo ${i + 1}`}>
                   <span className="rc-frame">
-                    <img src={r.src} alt={`MBFW 2025 runway look ${i + 1}`} loading="lazy" />
+                    <img src={r.thumb} alt={`MBFW 2025 runway look ${i + 1}`} loading="lazy" decoding="async" width="320" height="480" />
                     <span className="rc-glare" />
                   </span>
                   <span className="rc-tag"><em>{pad(i + 1)}</em> Look</span>

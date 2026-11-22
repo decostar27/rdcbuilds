@@ -4,357 +4,426 @@
    {
     "src": "looks/look1-01.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-01-t.webp"
    },
    {
     "src": "looks/look1-02.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-02-t.webp"
    },
    {
     "src": "looks/look1-03.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-03-t.webp"
    },
    {
     "src": "looks/look1-04.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-04-t.webp"
    },
    {
     "src": "looks/look1-05.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-05-t.webp"
    },
    {
     "src": "looks/look1-06.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-06-t.webp"
    },
    {
     "src": "looks/look1-07.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-07-t.webp"
    },
    {
     "src": "looks/look1-08.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-08-t.webp"
    },
    {
     "src": "looks/look1-09.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look1-09-t.webp"
    }
   ],
   "2": [
    {
     "src": "looks/look2-01.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-01-t.webp"
    },
    {
     "src": "looks/look2-02.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-02-t.webp"
    },
    {
     "src": "looks/look2-03.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-03-t.webp"
    },
    {
     "src": "looks/look2-04.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-04-t.webp"
    },
    {
     "src": "looks/look2-05.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-05-t.webp"
    },
    {
     "src": "looks/look2-06.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-06-t.webp"
    },
    {
     "src": "looks/look2-07.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-07-t.webp"
    },
    {
     "src": "looks/look2-08.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look2-08-t.webp"
    }
   ],
   "3": [
    {
     "src": "looks/look3-01.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-01-t.webp"
    },
    {
     "src": "looks/look3-02.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-02-t.webp"
    },
    {
     "src": "looks/look3-03.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-03-t.webp"
    },
    {
     "src": "looks/look3-04.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-04-t.webp"
    },
    {
     "src": "looks/look3-05.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-05-t.webp"
    },
    {
     "src": "looks/look3-06.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-06-t.webp"
    },
    {
     "src": "looks/look3-07.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-07-t.webp"
    },
    {
     "src": "looks/look3-08.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-08-t.webp"
    },
    {
     "src": "looks/look3-09.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-09-t.webp"
    },
    {
     "src": "looks/look3-10.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-10-t.webp"
    },
    {
     "src": "looks/look3-11.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-11-t.webp"
    },
    {
     "src": "looks/look3-12.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-12-t.webp"
    },
    {
     "src": "looks/look3-13.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look3-13-t.webp"
    }
   ],
   "4": [
    {
     "src": "looks/look4-01.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-01-t.webp"
    },
    {
     "src": "looks/look4-02.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-02-t.webp"
    },
    {
     "src": "looks/look4-03.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-03-t.webp"
    },
    {
     "src": "looks/look4-04.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-04-t.webp"
    },
    {
     "src": "looks/look4-05.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-05-t.webp"
    },
    {
     "src": "looks/look4-06.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-06-t.webp"
    },
    {
     "src": "looks/look4-07.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-07-t.webp"
    },
    {
     "src": "looks/look4-08.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-08-t.webp"
    },
    {
     "src": "looks/look4-09.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-09-t.webp"
    },
    {
     "src": "looks/look4-10.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-10-t.webp"
    },
    {
     "src": "looks/look4-11.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-11-t.webp"
    },
    {
     "src": "looks/look4-12.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look4-12-t.webp"
    }
   ],
   "5": [
    {
     "src": "looks/look5-01.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-01-t.webp"
    },
    {
     "src": "looks/look5-02.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-02-t.webp"
    },
    {
     "src": "looks/look5-03.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-03-t.webp"
    },
    {
     "src": "looks/look5-04.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-04-t.webp"
    },
    {
     "src": "looks/look5-05.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-05-t.webp"
    },
    {
     "src": "looks/look5-06.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-06-t.webp"
    },
    {
     "src": "looks/look5-07.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-07-t.webp"
    },
    {
     "src": "looks/look5-08.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-08-t.webp"
    },
    {
     "src": "looks/look5-09.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-09-t.webp"
    },
    {
     "src": "looks/look5-10.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-10-t.webp"
    },
    {
     "src": "looks/look5-11.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-11-t.webp"
    },
    {
     "src": "looks/look5-12.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-12-t.webp"
    },
    {
     "src": "looks/look5-13.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look5-13-t.webp"
    }
   ],
   "6": [
    {
     "src": "looks/look6-01.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-01-t.webp"
    },
    {
     "src": "looks/look6-02.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-02-t.webp"
    },
    {
     "src": "looks/look6-03.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-03-t.webp"
    },
    {
     "src": "looks/look6-04.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-04-t.webp"
    },
    {
     "src": "looks/look6-05.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-05-t.webp"
    },
    {
     "src": "looks/look6-06.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-06-t.webp"
    },
    {
     "src": "looks/look6-07.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-07-t.webp"
    },
    {
     "src": "looks/look6-08.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-08-t.webp"
    },
    {
     "src": "looks/look6-09.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-09-t.webp"
    },
    {
     "src": "looks/look6-10.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-10-t.webp"
    },
    {
     "src": "looks/look6-11.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-11-t.webp"
    },
    {
     "src": "looks/look6-12.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-12-t.webp"
    },
    {
     "src": "looks/look6-13.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-13-t.webp"
    },
    {
     "src": "looks/look6-14.webp",
     "w": 933,
-    "h": 1400
+    "h": 1400,
+    "thumb": "looks/look6-14-t.webp"
    }
   ]
  },
@@ -362,92 +431,110 @@
   {
    "src": "runway/mbfw-01.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-01-t.webp"
   },
   {
    "src": "runway/mbfw-02.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-02-t.webp"
   },
   {
    "src": "runway/mbfw-03.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-03-t.webp"
   },
   {
    "src": "runway/mbfw-04.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-04-t.webp"
   },
   {
    "src": "runway/mbfw-05.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-05-t.webp"
   },
   {
    "src": "runway/mbfw-06.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-06-t.webp"
   },
   {
    "src": "runway/mbfw-07.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-07-t.webp"
   },
   {
    "src": "runway/mbfw-08.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-08-t.webp"
   },
   {
    "src": "runway/mbfw-09.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-09-t.webp"
   },
   {
    "src": "runway/mbfw-10.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-10-t.webp"
   },
   {
    "src": "runway/mbfw-11.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-11-t.webp"
   },
   {
    "src": "runway/mbfw-12.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-12-t.webp"
   },
   {
    "src": "runway/mbfw-13.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-13-t.webp"
   },
   {
    "src": "runway/mbfw-14.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-14-t.webp"
   },
   {
    "src": "runway/mbfw-15.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-15-t.webp"
   },
   {
    "src": "runway/mbfw-16.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-16-t.webp"
   },
   {
    "src": "runway/mbfw-17.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-17-t.webp"
   },
   {
    "src": "runway/mbfw-18.webp",
    "w": 800,
-   "h": 1200
+   "h": 1200,
+   "thumb": "runway/mbfw-18-t.webp"
   }
  ],
  "brand": {
@@ -1044,5 +1131,29 @@
     "h": 1202
    }
   ]
+ },
+ "brandThumbs": {
+  "blue": "brand/c01/blue-t.webp",
+  "light-blue": "brand/c01/light-blue-t.webp",
+  "mw001c1": "brand/c01/mw001c1-t.webp",
+  "mw001c2": "brand/c01/mw001c2-t.webp",
+  "mw002c1": "brand/c01/mw002c1-t.webp",
+  "mw002c2": "brand/c01/mw002c2-t.webp",
+  "mw003c1": "brand/c01/mw003c1-t.webp",
+  "mw003c2": "brand/c01/mw003c2-t.webp",
+  "mw003c3": "brand/c01/mw003c3-t.webp",
+  "mw004c1": "brand/c01/mw004c1-t.webp",
+  "mw004c2": "brand/c01/mw004c2-t.webp",
+  "mw004c3": "brand/c01/mw004c3-t.webp",
+  "mw005c1": "brand/c01/mw005c1-t.webp",
+  "mw005c2": "brand/c01/mw005c2-t.webp",
+  "mw005c3": "brand/c01/mw005c3-t.webp",
+  "mw006c1": "brand/c01/mw006c1-t.webp",
+  "mw006c2": "brand/c01/mw006c2-t.webp",
+  "mw006c3": "brand/c01/mw006c3-t.webp",
+  "orange": "brand/c01/orange-t.webp",
+  "purple": "brand/c01/purple-t.webp",
+  "red": "brand/c01/red-t.webp",
+  "yellow": "brand/c01/yellow-t.webp"
  }
 }

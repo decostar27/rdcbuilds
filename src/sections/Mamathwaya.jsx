@@ -59,7 +59,7 @@ export default function Mamathwaya() {
             <Reveal key={c.name} delay={i * 0.08} className="candle">
               <motion.div className="candle-img" style={{ '--hue': c.hue }} whileHover={{ y: -12 }} transition={{ type: 'spring', stiffness: 160, damping: 16 }}>
                 <span className="candle-glow" />
-                <img src={c.src} alt={`${c.name} flower candle`} loading="lazy" />
+                <img src={c.thumb} alt={`${c.name} flower candle`} loading="lazy" decoding="async" width="360" height="480" />
               </motion.div>
               <span>{c.name}</span>
             </Reveal>
