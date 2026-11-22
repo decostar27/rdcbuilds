@@ -117,9 +117,9 @@ export const experience = [
 ]
 
 export const education = [
+  { when: '2027 intake', title: 'Master’s in Fashion Design Entrepreneurship', where: 'RMIT University, Australia' },
   { when: '2025', title: 'BA (Hons) Fashion Design & Textile', where: 'Northumbria University (AOD), Second Upper Honours' },
   { when: '2021 to 2022', title: 'Diploma of Communication & Creative Industries', where: 'Edith Cowan University' },
-  { when: 'School', title: 'G.C.E. Ordinary Level', where: 'Kegalle Balika Vidyalaya' },
 ]
 
 export const skills = ['Textile & print design', 'Shibori · Tie-dye · Batik', 'Fashion illustration', 'Technical drawing', 'Concept & trend research', 'Garment development', 'Adobe Illustrator', 'Procreate']
