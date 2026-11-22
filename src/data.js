@@ -1,6 +1,7 @@
 import manifest from './manifest.json'
 
-export const img = (p) => `/images/${p}`
+// BASE_URL is "./" so the site works at a domain root or in a sub-folder (GitHub Pages)
+export const img = (p) => `${import.meta.env.BASE_URL}images/${p}`
 
 export const looks = [
   {
@@ -117,7 +118,7 @@ export const experience = [
 ]
 
 export const education = [
-  { when: '2027 intake', title: 'Master’s in Fashion Design Entrepreneurship', where: 'RMIT University, Australia' },
+  { when: 'Ongoing', title: 'Master’s in Fashion Design Entrepreneurship', where: 'RMIT University, Australia' },
   { when: '2025', title: 'BA (Hons) Fashion Design & Textile', where: 'Northumbria University (AOD), Second Upper Honours' },
   { when: '2021 to 2022', title: 'Diploma of Communication & Creative Industries', where: 'Edith Cowan University' },
 ]
