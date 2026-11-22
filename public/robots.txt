@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://decostar27.github.io/rdcbuilds/sitemap.xml
