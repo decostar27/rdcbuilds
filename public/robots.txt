@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lakshimilani.com/sitemap.xml
+Sitemap: https://www.lakshimilani.com/sitemap.xml
