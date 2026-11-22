@@ -51,7 +51,7 @@ export default function About() {
         <div className="about-copy">
           <h2 className="h2"><Words text="A designer who dyes, draws and listens" /></h2>
           <TextGenerate className="lead" delay={0.2}
-            text="I am a fashion design graduate with a strong foundation in fashion and textile design. My practice moves between design research, concept development, textile and print design, illustration and garment development." />
+            text="I am Lakshi Milani Gunasekara, a fashion design graduate from Sri Lanka with a strong foundation in fashion and textile design. My practice moves between design research, concept development, textile and print design, illustration and garment development." />
           <Reveal delay={0.3}>
             <p>
               Working inside the industry has deepened my understanding of product development,

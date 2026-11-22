@@ -35,7 +35,7 @@ export default function Contact() {
       </div>
       <footer className="footer">
         <img src={brand.mark} alt="" />
-        <span>© {new Date().getFullYear()} Lakshi Milani</span>
+        <span>© {new Date().getFullYear()} Lakshi Milani Gunasekara</span>
         <span className="fc-k">Fashion &amp; textile design · Sri Lanka</span>
       </footer>
     </section>
