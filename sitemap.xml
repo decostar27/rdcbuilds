@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap for search engines. Site address. If the domain ever changes,
+     replace "https://www.lakshimilani.com/" here and in robots.txt and index.html. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.lakshimilani.com/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/hero.webp</image:loc>
+      <image:title>Lakshi Milani, Thama Nibbana collection: hand-dyed saffron cape and lotus-print skirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/lakshi-portrait.webp</image:loc>
+      <image:title>Portrait of fashion designer Lakshi Milani</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look1-01.webp</image:loc>
+      <image:title>Thama Nibbana, Look 1: The Restless Mind</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look1-02.webp</image:loc>
+      <image:title>Thama Nibbana, Look 1: The Restless Mind</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look2-01.webp</image:loc>
+      <image:title>Thama Nibbana, Look 2: Threads of Attention</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look2-02.webp</image:loc>
+      <image:title>Thama Nibbana, Look 2: Threads of Attention</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look3-01.webp</image:loc>
+      <image:title>Thama Nibbana, Look 3: Open Breath</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look3-02.webp</image:loc>
+      <image:title>Thama Nibbana, Look 3: Open Breath</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look4-01.webp</image:loc>
+      <image:title>Thama Nibbana, Look 4: The Inward Hood</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look4-02.webp</image:loc>
+      <image:title>Thama Nibbana, Look 4: The Inward Hood</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look5-01.webp</image:loc>
+      <image:title>Thama Nibbana, Look 5: Golden Stillness</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look5-02.webp</image:loc>
+      <image:title>Thama Nibbana, Look 5: Golden Stillness</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look6-01.webp</image:loc>
+      <image:title>Thama Nibbana, Look 6: Release</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/looks/look6-02.webp</image:loc>
+      <image:title>Thama Nibbana, Look 6: Release</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/runway/mbfw-01.webp</image:loc>
+      <image:title>Lakshi Milani collection on the runway, Mercedes-Benz Fashion Week 2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/runway/mbfw-02.webp</image:loc>
+      <image:title>Lakshi Milani collection on the runway, Mercedes-Benz Fashion Week 2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/runway/mbfw-03.webp</image:loc>
+      <image:title>Lakshi Milani collection on the runway, Mercedes-Benz Fashion Week 2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/runway/mbfw-04.webp</image:loc>
+      <image:title>Lakshi Milani collection on the runway, Mercedes-Benz Fashion Week 2025</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/brand/c01/mw001c1.webp</image:loc>
+      <image:title>Mamathwaya hand-dyed Shibori free-size garment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/brand/c01/mw002c1.webp</image:loc>
+      <image:title>Mamathwaya hand-dyed Shibori free-size garment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/brand/c01/mw005c3.webp</image:loc>
+      <image:title>Mamathwaya hand-dyed Shibori free-size garment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lakshimilani.com/images/brand/c01/mw006c2.webp</image:loc>
+      <image:title>Mamathwaya hand-dyed Shibori free-size garment</image:title>
+    </image:image>
+  </url>
+</urlset>
